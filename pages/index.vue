@@ -1,12 +1,11 @@
 <template>
-  <section class="view-Container view-Index">
+  <section class="view-Horizontal view-Blog">
     <ul class="post-List">
       <PostPreview
         v-for="post in posts"
         :id="post.id"
         :key="post.id"
         :title="post.title"
-        :excerpt="post.excerpt"
         :thumbnail="post.thumbnail"
       />
     </ul>
@@ -33,8 +32,6 @@ export default {
             return {
               id: bp.slug,
               title: bp.content.title,
-              excerpt: bp.content.excerpt,
-              content: bp.content.content,
               thumbnail: bp.content.thumbnail
             }
           })

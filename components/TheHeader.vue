@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nuxt-link class="header-Logo" tag="div" to="/blog">
+    <nuxt-link class="header-Logo" tag="div" to="/">
       <a>Bram Kleiweg</a>
     </nuxt-link>
     <ul>
