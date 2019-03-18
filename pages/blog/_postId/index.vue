@@ -2,16 +2,21 @@
   <section class="view-Container view-Post">
     <ul class="post-List">
       <li>
-        <h1>{{ title }}</h1>
-        <p>{{ content }}</p>
         <img :src="thumbnail">
+        <h1>{{ title }}</h1>
+        <MarkdownItem v-if="content" :input="content" class="post-Content"/>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
+import MarkdownItem from '~/components/MarkdownItem.vue'
+
 export default {
+  components: {
+    MarkdownItem
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/blog/' + context.params.postId, {

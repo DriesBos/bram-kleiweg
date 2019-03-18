@@ -1,12 +1,22 @@
 <template>
   <section class="view-Container view-Profile">
-    <h1>{{ title }}</h1>
-    <p>{{ content }}</p>
+    <ul class="post-List">
+      <li>
+        <img :src="thumbnail">
+        <h1>{{ title }}</h1>
+        <MarkdownItem v-if="content" :input="content" class="post-Content"/>
+      </li>
+    </ul>
   </section>
 </template>
 
 <script>
+import MarkdownItem from '~/components/MarkdownItem.vue'
+
 export default {
+  components: {
+    MarkdownItem
+  },
   asyncData(context) {
     return context.app.$storyapi
       .get('cdn/stories/about', {
@@ -14,6 +24,7 @@ export default {
       })
       .then(res => {
         return {
+          thumbnail: res.data.story.content.thumbnail,
           title: res.data.story.content.title,
           content: res.data.story.content.content
         }

@@ -1,3 +1,5 @@
+@import '~/assets/styling/variables.sass'
+
 // https://type-scale.com/
 @font-face
   font-family: 'Avenir'
@@ -17,20 +19,21 @@
   font-weight: normal
   font-style: italic
 
-h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active
-  font-family: "Avenir-Regular", Helvetica, Arial, sans-serif
-  font-size: 16px
-  line-height: 1.3
+h1, h2, h3, p, a, a:link, a:visited
+  font-family: "Avenir", Helvetica, Arial, sans-serif
+  font-size: $font-base
+  line-height: $lineheight-base
   color:  black
   white-space: pre-line
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  text-decoration: none
 
 a:hover, a:active, .nuxt-link-exact-active
-  text-decoration: underline
+  text-decoration: underline !important
 
-em, strong
+strong
   font-weight: bold
 
-i
+i, em
   font-style: italic
