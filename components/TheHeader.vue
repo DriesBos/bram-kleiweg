@@ -1,11 +1,12 @@
 <template>
   <header>
     <nuxt-link class="header-Logo" tag="div" to="/">
-      <a>Bram Kleiweg</a>
+      <a>bram kleiweg</a>
+      <span>1</span>
     </nuxt-link>
     <ul>
       <li>
-        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/about">about</nuxt-link>
       </li>
     </ul>
   </header>

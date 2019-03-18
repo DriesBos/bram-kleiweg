@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-storyblok-boilerplate",
+  "name": "bram-kleiweg",
   "version": "1.0.0",
-  "description": "My wicked Nuxt.js project",
+  "description": "Bram Kleiweg",
   "author": "Dries Bos",
   "private": true,
   "scripts": {
