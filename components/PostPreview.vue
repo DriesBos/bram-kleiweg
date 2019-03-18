@@ -1,12 +1,12 @@
 <template>
-  <nuxt-link :to="'/blog/' + id" tag="li" class="post-Item">
-    <div v-if="title" class="post-Info">
+  <li class="post-Item">
+    <nuxt-link :to="'/blog/' + id" v-if="title" tag="div" class="post-Info">
       <h1>{{ title }}</h1>
-    </div>
-    <div v-if="thumbnail" class="post-Thumbnail">
+    </nuxt-link>
+    <nuxt-link :to="'/blog/' + id" tag="div" v-if="thumbnail" class="post-Thumbnail">
       <img :src="thumbnail">
-    </div>
-  </nuxt-link>
+    </nuxt-link>
+  </li>
 </template>
 
 <script>

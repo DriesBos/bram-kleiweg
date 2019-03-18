@@ -4,30 +4,37 @@
 
 .view-General
   position: relative
+  display: flex
+  min-height: 100vh
+  flex-direction: column
 
 .view-Horizontal
-  position: absolute // Completely centers content
-  top: 0
-  left: 0
-  display: flex
-  align-items: center
-  height: 100vh
+  flex: 1
+  position: relative // Completely centers content
   width: 100vw
+  height: 100%
   overflow-y: hidden
   overflow-x: auto
-  padding: $spacing-3
+  z-index: 0
   .post-List
+    position: absolute // Gives child 100% height
+    top: 0
+    left: 0
+    bottom: 0
     display: flex
     align-items: flex-start
     height: 100%
-    padding-right: $spacing-3
+    padding: $spacing-3
+    flex-grow: 1
     .post-Item
+      position: relative
       flex: 0 0 auto
       display: flex
       flex-direction: column
       justify-content: center
       width: 50vh
       height: 100%
+      flex-grow: 1
       > div
         margin-bottom: $spacing-1
         cursor: pointer
