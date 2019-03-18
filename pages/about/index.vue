@@ -1,9 +1,13 @@
 <template>
-  <section class="view-Container view-Profile">
+  <section class="view-Vertical view-Profile">
     <ul class="post-List">
-      <li>
-        <img :src="thumbnail">
-        <h1>{{ title }}</h1>
+      <li class="post-Item">
+        <div v-if="thumbnail" class="post-Thumbnail">
+          <img :src="thumbnail">
+        </div>
+        <div v-if="title" class="post-Info">
+          <h1>{{ title }}</h1>
+        </div>
         <MarkdownItem v-if="content" :input="content" class="post-Content"/>
       </li>
     </ul>

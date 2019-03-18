@@ -2,27 +2,89 @@
 @import '~/assets/styling/typography.sass'
 @import '~/assets/styling/transitions.sass'
 
-.view-Container
-  margin-top: $spacing-2
+.view-General
+  position: relative
+
+.view-Horizontal
+  position: absolute // Completely centers content
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  height: 100vh
+  width: 100vw
+  overflow-y: hidden
+  overflow-x: auto
+  padding: $spacing-3
+  .post-List
+    display: flex
+    align-items: flex-start
+    height: 100%
+    padding-right: $spacing-3
+    .post-Item
+      flex: 0 0 auto
+      display: flex
+      flex-direction: column
+      justify-content: center
+      width: 50vh
+      height: 100%
+      > div
+        margin-bottom: $spacing-1
+        cursor: pointer
+      > div:last-child
+        margin-bottom: 0
+      img
+          height: auto
+          width: 100%
+          max-height: 100%
+          max-width: 100%
+    .post-Item:nth-child(1)
+      margin-right: (random(125) + 50)+px
+      width: (random(25) + 30)+vh
+    .post-Item:nth-child(2)
+      margin-right: (random(125) + 50)+px
+      width: (random(25) + 30)+vh
+    .post-Item:nth-child(3)
+      margin-right: (random(125) + 50)+px
+      width: (random(25) + 30)+vh
+    .post-Item:nth-child(4)
+      margin-right: (random(125) + 50)+px
+      width: (random(25) + 30)+vh
+    .post-Item:nth-child(5)
+      margin-right: (random(125) + 50)+px
+      width: (random(25) + 30)+vh
+    .post-Item:nth-child(6)
+      margin-right: (random(125) + 50)+px
+      width: (random(30) + 30)+vh
+    .post-Item:nth-child(7)
+      margin-right: (random(125) + 50)+px
+      width: (random(30) + 35)+vh
+    .post-Item:last-child
+      margin-right: 0
+
+.view-Vertical
+  margin-top: $spacing-3
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
-
-.view-Horizontal
-
-.view-Vertical
-
-.post-List
-  display: flex
-  flex-direction: column
-  width: 300px
-  li
-    background: lightblue
-    margin-bottom: $spacing-2
-  img
-    width: 100%
-    background: green
+  .post-List
+    display: flex
+    flex-direction: column
+    width: 660px
+  .post-Item
+    display: flex
+    flex-direction: column
+    margin-bottom: $spacing-4
+    > div
+      margin-bottom: $spacing-3
+    > div:last-child
+      margin-bottom: 0
+    img
+      width: 100%
+      margin-bottom: $spacing-3
+    img:last-child
+      margin-bottom: 0
 
 header
   width: 100%

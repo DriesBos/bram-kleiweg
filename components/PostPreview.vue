@@ -1,24 +1,18 @@
 <template>
-  <nuxt-link :to="'/blog/' + id" tag="li">
-    <img :src="thumbnail">
-    <h1>{{ title }}</h1>
-    <MarkdownItem v-if="excerpt" :input="excerpt" class="post-Content"/>
+  <nuxt-link :to="'/blog/' + id" tag="li" class="post-Item">
+    <div v-if="title" class="post-Info">
+      <h1>{{ title }}</h1>
+    </div>
+    <div v-if="thumbnail" class="post-Thumbnail">
+      <img :src="thumbnail">
+    </div>
   </nuxt-link>
 </template>
 
 <script>
-import MarkdownItem from '~/components/MarkdownItem.vue'
-
 export default {
-  components: {
-    MarkdownItem
-  },
   props: {
     title: {
-      type: String,
-      required: true
-    },
-    excerpt: {
       type: String,
       required: true
     },

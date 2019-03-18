@@ -1,10 +1,26 @@
 <template>
-  <section class="view-Container view-Post">
+  <section class="view-Vertical view-Post">
     <ul class="post-List">
-      <li>
-        <img :src="thumbnail">
-        <h1>{{ title }}</h1>
+      <li class="post-Item">
+        <div v-if="thumbnail" class="post-Thumbnail">
+          <img :src="thumbnail">
+        </div>
+        <div v-if="title" class="post-Info">
+          <h1>{{ title }}</h1>
+        </div>
         <MarkdownItem v-if="content" :input="content" class="post-Content"/>
+        <div v-if="image_0" class="post-Images">
+          <img v-if="image_0" :src="image_0">
+          <img v-if="image_1" :src="image_1">
+          <img v-if="image_2" :src="image_2">
+          <img v-if="image_3" :src="image_3">
+          <img v-if="image_4" :src="image_4">
+          <img v-if="image_5" :src="image_5">
+          <img v-if="image_6" :src="image_6">
+          <img v-if="image_7" :src="image_7">
+          <img v-if="image_8" :src="image_8">
+          <img v-if="image_9" :src="image_9">
+        </div>
       </li>
     </ul>
   </section>
@@ -26,7 +42,17 @@ export default {
         return {
           title: res.data.story.content.title,
           content: res.data.story.content.content,
-          thumbnail: res.data.story.content.thumbnail
+          thumbnail: res.data.story.content.thumbnail,
+          image_0: res.data.story.content.image_0,
+          image_1: res.data.story.content.image_1,
+          image_2: res.data.story.content.image_2,
+          image_3: res.data.story.content.image_3,
+          image_4: res.data.story.content.image_4,
+          image_5: res.data.story.content.image_5,
+          image_6: res.data.story.content.image_6,
+          image_7: res.data.story.content.image_7,
+          image_8: res.data.story.content.image_8,
+          image_9: res.data.story.content.image_9
         }
       })
   }
