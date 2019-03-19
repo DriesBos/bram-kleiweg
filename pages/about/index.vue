@@ -6,8 +6,7 @@
           <img :src="thumbnail">
         </div>
         <div v-if="title" class="post-Info">
-          <h1>{{ title }}</h1>
-          <span>1</span>
+          <h1 class="logo">{{ title }}</h1>
         </div>
         <MarkdownItem v-if="content" :input="content" class="post-Content"/>
       </li>

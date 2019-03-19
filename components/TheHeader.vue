@@ -2,10 +2,10 @@
   <header>
     <ul class="header-Horizontal">
       <nuxt-link v-if="this.$route.name === 'blog'" class="header-Logo" tag="li" to="/">
-        <p>bram kleiweg</p>
+        <p class="logo">Bram Kleiweg</p>
       </nuxt-link>
       <nuxt-link v-if="this.$route.name === 'blog'" class="header-Item" tag="li" to="/about">
-        <p>about</p>
+        <p>About</p>
       </nuxt-link>
       <li v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'">
         <p>&nbsp;</p>
