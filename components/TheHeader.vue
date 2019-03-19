@@ -18,8 +18,7 @@
         tag="li"
         to="/blog"
       >
-        <img src="@/assets/images/arrow.svg">
-        <p>back</p>
+        <img class="icon-Close" src="@/assets/images/close.svg">
       </nuxt-link>
     </ul>
   </header>

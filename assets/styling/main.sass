@@ -114,6 +114,18 @@
         font-size: calc(#{$font-base} / 2)
         transform: translateY(4px)
         margin-left: .1em
+  .post-Navigation
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    padding: $spacing-3
+    cursor: pointer
+    &_Left
+      left: 0
+    &_Right
+      right: 0
+
+
 
 header
   position: relative
@@ -136,5 +148,19 @@ header
     position: fixed
     top: 0
     left: 0
+
+.icon
+  &-Close
+    width: 16px
+    height: 16px
+  &-Left
+    width: 17px
+    height: 17px
+  &-Right
+    width: 17px
+    height: 17px
+
+
+
 
 

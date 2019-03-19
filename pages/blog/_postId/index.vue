@@ -23,6 +23,12 @@
         </div>
       </li>
     </ul>
+    <div class="post-Navigation post-Navigation_Left">
+      <img class="icon-Left" src="@/assets/images/left.svg">
+    </div>
+    <div class="post-Navigation post-Navigation_Right">
+      <img class="icon-Right" src="@/assets/images/right.svg">
+    </div>
   </section>
 </template>
 
