@@ -1,7 +1,9 @@
 <template>
   <div class="view-General">
     <TheHeader/>
-    <nuxt/>
+    <transition name="page" mode="out-in">
+      <nuxt/>
+    </transition>
   </div>
 </template>
 
