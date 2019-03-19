@@ -22,6 +22,10 @@
     cursor: pointer
     padding: $spacing-3
     text-decoration: none !important
+    border-bottom: 2px white solid
+    transition: all $transition-links
+    &:hover
+      border-bottom: 2px black solid
     &:before
       position: absolute
       content: '1'
@@ -147,9 +151,12 @@ header
       display: flex
       padding: $spacing-3
       cursor: pointer
+      p
+        border-bottom: 1px white solid
+        transition: all $transition-links
       &:hover
         p
-          text-decoration: underline
+          border-bottom: 1px black solid
       img
         margin-right: $spacing-1
   .header-Vertical
