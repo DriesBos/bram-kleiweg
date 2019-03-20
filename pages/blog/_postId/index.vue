@@ -23,10 +23,13 @@
         </div>
       </li>
     </ul>
-    <div class="post-Navigation post-Navigation_Left">
+    <div
+      @click="navigateToProject(previousProjectId())"
+      class="post-Navigation post-Navigation_Left"
+    >
       <img class="icon-Left" src="@/assets/images/left.svg">
     </div>
-    <div class="post-Navigation post-Navigation_Right">
+    <div @click="navigateToProject(nextProjectId())" class="post-Navigation post-Navigation_Right">
       <img class="icon-Right" src="@/assets/images/right.svg">
     </div>
   </section>
@@ -38,6 +41,11 @@ import MarkdownItem from '~/components/MarkdownItem.vue'
 export default {
   components: {
     MarkdownItem
+  },
+  data() {
+    return {
+      pageNumber: 0
+    }
   },
   asyncData(context) {
     return context.app.$storyapi
@@ -61,6 +69,33 @@ export default {
           image_9: res.data.story.content.image_9
         }
       })
+  },
+  methods: {
+    previousProjectId() {
+      const project = this.projects[this.getProjectIndex() - 1]
+      if (project) {
+        return project.id
+      } else {
+        return null
+      }
+    },
+    nextProjectId() {
+      const project = this.projects[this.getProjectIndex() + 1]
+      if (project) {
+        return project.id
+      } else {
+        return null
+      }
+    },
+    navigateToProject(id) {
+      this.$router.push({ path: `/blog/${id}` })
+    },
+    getProjectIndex() {
+      const index = this.projects.findIndex(
+        element => element.id === this.$route.params.id
+      )
+      return index === -1 ? 0 : index
+    }
   }
 }
 </script>
