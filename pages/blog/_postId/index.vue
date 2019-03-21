@@ -23,13 +23,10 @@
         </div>
       </li>
     </ul>
-    <div
-      @click="navigateToProject(previousProjectId())"
-      class="post-Navigation post-Navigation_Left"
-    >
+    <div @click="navigateToPost(previousPostId())" class="post-Navigation post-Navigation_Left">
       <img class="icon-Left" src="@/assets/images/left.svg">
     </div>
-    <div @click="navigateToProject(nextProjectId())" class="post-Navigation post-Navigation_Right">
+    <div @click="navigateToPost(nextPostId())" class="post-Navigation post-Navigation_Right">
       <img class="icon-Right" src="@/assets/images/right.svg">
     </div>
   </section>
@@ -71,28 +68,29 @@ export default {
       })
   },
   methods: {
-    previousProjectId() {
-      const project = this.projects[this.getProjectIndex() - 1]
-      if (project) {
-        return project.id
+    previousPostId() {
+      const post = this.posts[this.getPostIndex() - 1]
+      if (post) {
+        return post.postId
       } else {
         return null
       }
     },
-    nextProjectId() {
-      const project = this.projects[this.getProjectIndex() + 1]
-      if (project) {
-        return project.id
+    nextPostId() {
+      const post = this.posts[this.getPostIndex() + 1]
+      if (post) {
+        return post.postId
       } else {
         return null
       }
     },
-    navigateToProject(id) {
-      this.$router.push({ path: `/blog/${id}` })
+    navigateToPost(postId) {
+      this.$router.push({ path: `/blog/${postId}` })
     },
-    getProjectIndex() {
-      const index = this.projects.findIndex(
-        element => element.id === this.$route.params.id
+    getPostIndex() {
+      console.log('console log', this.posts)
+      const index = this.posts.findIndex(
+        element => element.id === this.$route.params.postId
       )
       return index === -1 ? 0 : index
     }
