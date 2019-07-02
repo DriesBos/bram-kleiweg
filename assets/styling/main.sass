@@ -38,37 +38,39 @@
   overflow-x: auto
   z-index: 0
   .post-List
-    position: absolute // Gives child 100% height
-    top: 0
-    left: 0
-    bottom: 0
-    display: flex
-    align-items: flex-start
+    position: relative
     height: 100%
+    display: flex
+    align-items: flex-end
     padding: $spacing-3
     flex-grow: 1
+    border: 2px solid blue
     .post-Item
       position: relative
+      height: calc(100vh - 160px)
       flex: 0 0 auto
       display: flex
       flex-direction: column
       justify-content: flex-end
-      height: 100%
       width: auto
       flex-grow: 1
-      border: 1px solid purple
+      border: 2px solid purple
       > div
         margin-bottom: $spacing-1
         cursor: pointer
       > div:last-child
         margin-bottom: 0
-      img
-          height: 100%
-          width: 50vh
+      .post-Thumbnail
+        position: relative
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        border: 2px green solid
+        img
           max-height: 100%
           max-width: 100%
-          object-fit: contain
-          border: 1px red solid
+          border: 2px red solid
       .post-Info
         text-align: right
     .post-Item:nth-child(1)
@@ -106,7 +108,6 @@
     display: flex
     flex-direction: column
     padding-bottom: $spacing-4
-    // margin-bottom: $spacing-4
     border-bottom: 1px black solid
     > div
       margin-bottom: $spacing-3
