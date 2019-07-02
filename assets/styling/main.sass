@@ -135,45 +135,42 @@
     &_Right
       right: 0
 
-
-.view-ProfileTwo
-  background: black
-  position: relative
-  margin: 0
-  min-height: 100vh
-  .post-List
-    margin-top: $spacing-5
-  p, h1
-    color: white
-  h1
-    position: fixed
-    top: 0
-    left: 50%
-    transform: translateX(-50%)
-    font-size: 15vw
-    text-align: right
-    text-transform: lowercase
-
 header
   position: relative
   width: 100%
   top: 0
   left: 0
+  z-index: 999
   ul
-    display: flex
-    justify-content: space-between
     li
-      display: flex
-      padding: $spacing-3
-      cursor: pointer
-      p
-        border-bottom: 1px white solid
-        transition: all $transition-links
-      &:hover
-        p
-          border-bottom: 1px black solid
+      display: inline-block
       img
         margin-right: $spacing-1
+    li:nth-child(1)
+      position: absolute
+      top: 0
+      left: 0
+    li:nth-child(2)
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+    li:nth-child(3)
+      position: absolute
+      top: 0
+      right: 0
+  .header-Item
+    padding: $spacing-3
+    cursor: pointer
+    p, a
+      border-bottom: 1px white solid
+      transition: all $transition-links
+    &:hover
+      p, a
+        border-bottom: 1px black solid
+  .header-Filter
+    display: flex
+
   .header-Vertical
     position: fixed
     top: 0
