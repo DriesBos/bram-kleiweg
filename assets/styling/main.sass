@@ -52,71 +52,66 @@
       flex: 0 0 auto
       display: flex
       flex-direction: column
-      justify-content: center
-      width: 50vh
+      justify-content: flex-end
       height: 100%
+      width: auto
       flex-grow: 1
+      border: 1px solid purple
       > div
         margin-bottom: $spacing-1
         cursor: pointer
       > div:last-child
         margin-bottom: 0
       img
-          height: auto
-          width: 100%
+          height: 100%
+          width: 50vh
           max-height: 100%
           max-width: 100%
+          object-fit: contain
+          border: 1px red solid
       .post-Info
         text-align: right
     .post-Item:nth-child(1)
       margin-right: (random(125) + 50)+px
-      width: (random(25) + 30)+vh
     .post-Item:nth-child(2)
       margin-right: (random(125) + 50)+px
-      width: (random(25) + 30)+vh
     .post-Item:nth-child(3)
       margin-right: (random(125) + 50)+px
-      width: (random(25) + 30)+vh
     .post-Item:nth-child(4)
       margin-right: (random(125) + 50)+px
-      width: (random(25) + 30)+vh
     .post-Item:nth-child(5)
       margin-right: (random(125) + 50)+px
-      width: (random(25) + 30)+vh
     .post-Item:nth-child(6)
       margin-right: (random(125) + 50)+px
-      width: (random(30) + 30)+vh
     .post-Item:nth-child(7)
       margin-right: (random(125) + 50)+px
-      width: (random(30) + 35)+vh
     .post-Item:last-child
-      margin-right: 0
+      padding-right: $spacing-3
 
 .view-Vertical
-  margin-top: $spacing-3
   display: flex
   flex-direction: column
   justify-content: center
   align-items: center
+  min-height: 100vh
   .post-List
     display: flex
     flex-direction: column
+    justify-content: space-around
     width: 100%
     max-width: 660px
+    padding-top: $spacing-3
+    padding-bottom: $spacing-3
   .post-Item
     display: flex
     flex-direction: column
     padding-bottom: $spacing-4
-    margin-bottom: $spacing-4
+    // margin-bottom: $spacing-4
     border-bottom: 1px black solid
     > div
       margin-bottom: $spacing-3
     > div:last-child
       margin-bottom: 0
-    .post-Title
-      h1
-        text-align: right
-        width: 100%
     img
       width: 100%
       margin-bottom: $spacing-3
@@ -146,23 +141,10 @@ header
   left: 0
   z-index: 999
   ul
+    display: flex
     li
-      display: inline-block
       img
         margin-right: $spacing-1
-    li:nth-child(1)
-      position: absolute
-      top: 0
-      left: 0
-    li:nth-child(2)
-      position: absolute
-      top: 0
-      left: 50%
-      transform: translateX(-50%)
-    li:nth-child(3)
-      position: absolute
-      top: 0
-      right: 0
   .header-Item
     padding: $spacing-3
     cursor: pointer

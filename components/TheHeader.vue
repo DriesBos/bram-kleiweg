@@ -1,18 +1,12 @@
 <template>
   <header>
-    <ul class="header-Horizontal">
+    <ul v-if="this.$route.name === 'blog'" class="header-Horizontal">
       <nuxt-link v-if="this.$route.name === 'blog'" class="header-Logo header-Item" tag="li" to="/">
         <p class="logo">bram kleiweg</p>
       </nuxt-link>
       <li class="header-Filter">
         <nuxt-link v-if="this.$route.name === 'blog'" class="header-Item" tag="a" to="/">
-          <p>Bookcovers</p>
-        </nuxt-link>
-        <nuxt-link v-if="this.$route.name === 'blog'" class="header-Item" tag="a" to="/">
-          <p>Posters</p>
-        </nuxt-link>
-        <nuxt-link v-if="this.$route.name === 'blog'" class="header-Item" tag="a" to="/">
-          <p>All</p>
+          <p>Work</p>
         </nuxt-link>
       </li>
       <nuxt-link

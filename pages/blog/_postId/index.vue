@@ -8,9 +8,6 @@
         <div v-if="thumbnail" class="post-Thumbnail">
           <img :src="thumbnail" />
         </div>
-        <div class="post-Category">
-          <h1>Category</h1>
-        </div>
         <MarkdownItem v-if="content" :input="content" class="post-Content" />
         <div v-if="image_0" class="post-Images">
           <img v-if="image_0" :src="image_0" />
