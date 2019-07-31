@@ -1,26 +1,33 @@
 <template>
   <header>
-    <ul v-if="this.$route.name === 'blog'" class="header-Horizontal">
-      <nuxt-link v-if="this.$route.name === 'blog'" class="header-Logo header-Item" tag="li" to="/">
+    <ul
+      v-if="this.$route.name === 'blog' || this.$route.name === 'category-categoryId'"
+      class="header-Horizontal"
+    >
+      <nuxt-link class="header-Logo header-Item" tag="li" to="/">
         <p class="logo">bram kleiweg</p>
       </nuxt-link>
-      <li class="header-Filter">
-        <nuxt-link v-if="this.$route.name === 'blog'" class="header-Item" tag="a" to="/">
-          <p>Work</p>
-        </nuxt-link>
-      </li>
-      <nuxt-link
-        v-if="this.$route.name === 'blog'"
-        class="header-About header-Item"
-        tag="li"
-        to="/about"
+
+      <li
+        v-for="category in categories"
+        v-bind:class="{active: selectedCategory == category.id}"
+        class="header-Filter"
+        v-bind:key="category.id"
       >
+        <router-link
+          tag="a"
+          :to="'/category/' + category.id"
+          class="header-Item"
+        >{{ category.name }}</router-link>
+      </li>
+
+      <nuxt-link class="header-About header-Item" tag="li" to="/about">
         <p>About</p>
       </nuxt-link>
 
-      <li v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'">
+      <!-- <li v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'">
         <p>&nbsp;</p>
-      </li>
+      </li>-->
     </ul>
     <ul
       v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'"
@@ -35,3 +42,15 @@
     </ul>
   </header>
 </template>
+
+<script>
+import { mapState } from 'vuex'
+export default {
+  computed: mapState({
+    categories: state => state.categories.list,
+    selectedCategory(state) {
+      return this.$route.params.categoryId
+    }
+  })
+}
+</script>

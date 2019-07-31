@@ -21,7 +21,14 @@ export default {
     PostPreview: PostPreview
   },
   computed: mapState({
-    projects: state => state.projects.list
+    projects(state) {
+      const category = state.categories.list.find(
+        category => category.id === this.$route.params.categoryId
+      )
+      return state.projects.list.filter(
+        project => project.tag_list.indexOf(category.name) > -1
+      )
+    }
   })
 }
 </script>

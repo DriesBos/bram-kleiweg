@@ -23,33 +23,54 @@
         </div>
       </li>
     </ul>
-    <div @click="navigateToPost(previousPostId())" class="post-Navigation post-Navigation_Left">
+
+    <router-link
+      v-if="previous_url"
+      class="post-Navigation post-Navigation_Left"
+      tag="a"
+      :to="previous_url"
+    >
       <img class="icon-Left" src="@/assets/images/left.svg" />
-    </div>
-    <div @click="navigateToPost(nextPostId())" class="post-Navigation post-Navigation_Right">
+    </router-link>
+    <router-link
+      v-if="next_url"
+      class="post-Navigation post-Navigation_Right"
+      tag="a"
+      :to="next_url"
+    >
       <img class="icon-Right" src="@/assets/images/right.svg" />
-    </div>
+    </router-link>
   </section>
 </template>
 
 <script>
 import MarkdownItem from '~/components/MarkdownItem.vue'
 
+/* eslint-disable */
+
+function getProjectIndex(projects, id) {
+  const index = projects.findIndex(element => element.id === id)
+  return index === -1 ? 0 : index
+}
+
 export default {
   components: {
     MarkdownItem
   },
-  data() {
-    return {
-      pageNumber: 0
-    }
-  },
-  asyncData(context) {
-    return context.app.$storyapi
-      .get('cdn/stories/blog/' + context.params.postId, {
+  asyncData({ app, store, params }) {
+    return app.$storyapi
+      .get('cdn/stories/blog/' + params.postId, {
         version: process.env.NODE_ENV === 'production' ? 'published' : 'draft'
       })
       .then(res => {
+        let previous =
+            store.state.projects.list[
+              getProjectIndex(store.state.projects.list, params.postId) - 1
+            ],
+          next =
+            store.state.projects.list[
+              getProjectIndex(store.state.projects.list, params.postId) + 1
+            ]
         return {
           title: res.data.story.content.title,
           content: res.data.story.content.content,
@@ -63,36 +84,15 @@ export default {
           image_6: res.data.story.content.image_6,
           image_7: res.data.story.content.image_7,
           image_8: res.data.story.content.image_8,
-          image_9: res.data.story.content.image_9
+          image_9: res.data.story.content.image_9,
+          previous_url: previous ? '/blog/' + previous.id : null,
+          next_url: next ? '/blog/' + next.id : null
         }
       })
   },
   methods: {
-    previousPostId() {
-      const post = this.posts[this.getPostIndex() - 1]
-      if (post) {
-        return post.postId
-      } else {
-        return null
-      }
-    },
-    nextPostId() {
-      const post = this.posts[this.getPostIndex() + 1]
-      if (post) {
-        return post.postId
-      } else {
-        return null
-      }
-    },
-    navigateToPost(postId) {
-      this.$router.push({ path: `/blog/${postId}` })
-    },
-    getPostIndex() {
-      console.log('console log', this.posts)
-      const index = this.posts.findIndex(
-        element => element.id === this.$route.params.postId
-      )
-      return index === -1 ? 0 : index
+    navigateToProject(id) {
+      this.$router.push({ path: `/blog/${id}` })
     }
   }
 }
