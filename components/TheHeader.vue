@@ -8,18 +8,21 @@
         <p class="logo">bram kleiweg</p>
       </nuxt-link>
 
-      <li
-        v-for="category in categories"
-        v-bind:class="{active: selectedCategory == category.id}"
-        class="header-Filter"
-        v-bind:key="category.id"
-      >
-        <router-link
-          tag="a"
-          :to="'/category/' + category.id"
-          class="header-Item"
-        >{{ category.name }}</router-link>
-      </li>
+      <ul class="header-Filter">
+        <li>
+          <p>Filter</p>
+        </li>
+        <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
+          <a>All Projects</a>
+        </nuxt-link>
+        <li
+          v-for="category in categories"
+          v-bind:class="{active: selectedCategory == category.id}"
+          v-bind:key="category.id"
+        >
+          <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
+        </li>
+      </ul>
 
       <nuxt-link class="header-About header-Item" tag="li" to="/about">
         <p>About</p>
