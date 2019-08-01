@@ -27,20 +27,13 @@
       <nuxt-link class="header-About header-Item" tag="li" to="/about">
         <p>About</p>
       </nuxt-link>
-
-      <!-- <li v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'">
-        <p>&nbsp;</p>
-      </li>-->
     </ul>
     <ul
       v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'"
       class="header-Vertical"
     >
       <nuxt-link class="header-Item" tag="li" to="/blog">
-        <img class="icon-Close" src="@/assets/images/close.svg" />
-      </nuxt-link>
-      <nuxt-link v-if="this.$route.name === 'abouttwo'" class="header-Item" tag="li" to="/blog">
-        <img class="icon-Close" src="@/assets/images/close-white.svg" />
+        <img class="icon icon-Close" src="@/assets/images/close.svg" />
       </nuxt-link>
     </ul>
   </header>

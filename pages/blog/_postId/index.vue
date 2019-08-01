@@ -30,7 +30,7 @@
       tag="a"
       :to="previous_url"
     >
-      <img class="icon-Left" src="@/assets/images/left.svg" />
+      <img class="icon icon-Left" src="@/assets/images/left.svg" />
     </router-link>
     <router-link
       v-if="next_url"
@@ -38,7 +38,7 @@
       tag="a"
       :to="next_url"
     >
-      <img class="icon-Right" src="@/assets/images/right.svg" />
+      <img class="icon icon-Right" src="@/assets/images/right.svg" />
     </router-link>
   </section>
 </template>
