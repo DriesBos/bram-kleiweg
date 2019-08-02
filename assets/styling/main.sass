@@ -15,13 +15,17 @@ body, html
   display: flex
   justify-content: center
   align-items: center
-  background: black
-  transition: background .5s ease
+  background: hsla(0, 0%, 0%, 1)
+  transition: background .5s ease, transform .7s ease
+  border-right: 2px solid black
   &.hover
-    background: white
+    background: hsla(0, 0%, 100%, 1)
     h1
       color: black
-      // border-bottom: .25vmin black solid
+  &.click
+    transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
+  &.menu
+    transform: translateX(calc(-100vw + #{var(--menu-open)}))
   h1
     color: white
     font-size: 10vmin
@@ -34,6 +38,25 @@ body, html
   @media (hover: none)
     border-bottom: .25vmin black solid
 
+  .menu-Toggle
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    padding: var(--spacing-three)
+    li
+      cursor: pointer
+  .menu-Collapsed
+    ul
+      display: flex
+      justify-content: space-between
+      align-items: center
+      height: 100%
+    width: 100vh
+    height: 60px
+    transform: rotate(-90deg) translateY(-60px)
+    transform-origin: top right
+
 
 @media all and (min-width: $breakpoint)
   .view-General
@@ -41,6 +64,8 @@ body, html
     display: flex
     height: 100vh
     flex-direction: column
+    align-items: flex-end
+    // background: black
 
   .view-Horizontal
     flex: 1
@@ -48,9 +73,11 @@ body, html
     flex-wrap: nowrap
     overflow-x: auto
     padding-left: var(--spacing-three)
+    padding-top: var(--spacing-three)
     padding-bottom: var(--spacing-three)
     -webkit-overflow-scrolling: touch
     align-items: flex-end
+    margin-left: calc(#{var(--menu-collapsed)} + #{var(--spacing-four)}
     .post-Item
       flex: 0 0 auto
       display: inline-block
@@ -71,7 +98,7 @@ body, html
       padding-right: var(--spacing-four)
     @for $i from 0 to 999
       .post-Item:nth-child(#{$i})
-        margin-right: (random(125) + 50)+px
+        margin-right: (random(125) + 100)+px
         height: random(22) + 78%
 
   .view-Vertical
@@ -80,6 +107,7 @@ body, html
     justify-content: space-around
     align-items: center
     min-height: 100vh
+    width: calc(100% - (#{var(--menu-collapsed)} + #{var(--spacing-four)}))
     .post-Item
       display: flex
       height: 100%
@@ -106,7 +134,7 @@ body, html
       padding: var(--spacing-three)
       cursor: pointer
       &_Left
-        left: 0
+        left: calc(#{var(--menu-collapsed)} + #{var(--spacing-four)})
       &_Right
         right: 0
 
@@ -119,9 +147,11 @@ body, html
 header
   position: relative
   width: 100%
-  z-index: 999
+  // z-index: 999
+  display: none
   ul
     display: flex
+    flex-direction: column
     li
       img
         margin-right: var(--spacing-one)
@@ -138,9 +168,9 @@ header
   .header-Filter
     position: relative
     flex-direction: column
-    width: 145px
-    height: 98px
-    overflow: visible
+    // width: 145px
+    // height: 98px
+    // overflow: visible
     p, a
       border-bottom: 1px transparent solid
       transition: border-bottom $transition-links
@@ -150,11 +180,11 @@ header
       padding-top: var(--spacing-three)
       padding-right: var(--spacing-three)
     li:nth-child(n+2)
-      transition: visibility .3s ease-in-out, opacity .3s ease-in-out
-      left: 0
-      width: 251px
-      visibility: hidden
-      opacity: 0
+      // transition: visibility .3s ease-in-out, opacity .3s ease-in-out
+      // left: 0
+      // width: 251px
+      // visibility: hidden
+      // opacity: 0
       padding-left: var(--spacing-three)
       cursor: pointer
       &:hover
