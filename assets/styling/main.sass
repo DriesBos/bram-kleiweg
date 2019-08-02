@@ -31,7 +31,6 @@ body, html
     &:before
       font-size: 4vmin
 
-
 .view-Horizontal
   flex: 1
   display: flex
@@ -47,16 +46,18 @@ body, html
     position: relative
     height: 100% // fallback
     max-height: 100%
+    cursor: pointer
     figcaption
       display: block
-      padding-bottom: $spacing-3
+      padding-bottom: $spacing-1
       text-align: right
     img
       position: relative
       display: block
-      height: calc(100% - 65px)
+      height: calc(100% - 41px)
       max-height: 100%
-      // opacity: .6
+  .post-Item:last-child
+    padding-right: $spacing-4
   @for $i from 0 to 999
     .post-Item:nth-child(#{$i})
       margin-right: (random(125) + 50)+px
@@ -132,7 +133,7 @@ header
   .header-Filter
     position: relative
     flex-direction: column
-    width: 124px
+    width: 145px
     height: 98px
     overflow: visible
     p, a
@@ -151,6 +152,10 @@ header
       opacity: 0
       padding-left: $spacing-3
       cursor: pointer
+      // a
+      //   background: rgba(255,255,255,0.7)
+      //   -webkit-backdrop-filter: saturate(180%) blur(2px)
+      //   backdrop-filter: saturate(180%) blur(2px)
       &:hover
         p, a
           border-bottom: 1px black solid

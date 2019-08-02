@@ -10,7 +10,7 @@
 
       <ul class="header-Filter">
         <li>
-          <p>Work</p>
+          <p>Projects</p>
         </li>
         <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
           <a>All Projects</a>
