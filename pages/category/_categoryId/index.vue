@@ -1,15 +1,13 @@
 <template>
-  <section class="view-Horizontal view-Blog">
-    <ul class="post-List">
-      <PostPreview
-        v-for="post in projects"
-        :id="post.id"
-        :key="post.id"
-        :title="post.title"
-        :thumbnail="post.thumbnail"
-      />
-    </ul>
-  </section>
+  <ul class="view-Horizontal view-Blog post-List">
+    <PostPreview
+      v-for="post in projects"
+      :id="post.id"
+      :key="post.id"
+      :title="post.title"
+      :thumbnail="post.thumbnail"
+    />
+  </ul>
 </template>
 
 <script>
