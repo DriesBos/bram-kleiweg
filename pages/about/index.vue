@@ -1,17 +1,15 @@
 <template>
-  <section class="view-Vertical view-Profile">
-    <ul class="post-List">
-      <li class="post-Item">
-        <div v-if="thumbnail" class="post-Thumbnail">
-          <img :src="thumbnail">
-        </div>
-        <div v-if="title" class="post-Info">
-          <h1 class="logo">{{ title }}</h1>
-        </div>
-        <MarkdownItem v-if="content" :input="content" class="post-Content"/>
-      </li>
-    </ul>
-  </section>
+  <ul class="view-Vertical view-Profile post-List">
+    <li class="post-Item">
+      <div v-if="title" class="post-Info">
+        <h1 class="logo">{{ title }}</h1>
+      </div>
+      <div v-if="thumbnail" class="post-Thumbnail">
+        <img :src="thumbnail" />
+      </div>
+      <MarkdownItem v-if="content" :input="content" class="post-Content" />
+    </li>
+  </ul>
 </template>
 
 <script>

@@ -1,28 +1,26 @@
 <template>
-  <section class="view-Vertical view-Post">
-    <ul class="post-List">
-      <li class="post-Item">
-        <div v-if="title" class="post-Info post-Title">
-          <h1>{{ title }}</h1>
-        </div>
-        <div v-if="thumbnail" class="post-Thumbnail">
-          <img :src="thumbnail" />
-        </div>
-        <MarkdownItem v-if="content" :input="content" class="post-Content" />
-        <div v-if="image_0" class="post-Images">
-          <img v-if="image_0" :src="image_0" />
-          <img v-if="image_1" :src="image_1" />
-          <img v-if="image_2" :src="image_2" />
-          <img v-if="image_3" :src="image_3" />
-          <img v-if="image_4" :src="image_4" />
-          <img v-if="image_5" :src="image_5" />
-          <img v-if="image_6" :src="image_6" />
-          <img v-if="image_7" :src="image_7" />
-          <img v-if="image_8" :src="image_8" />
-          <img v-if="image_9" :src="image_9" />
-        </div>
-      </li>
-    </ul>
+  <ul class="view-Vertical view-Post post-List">
+    <li class="post-Item">
+      <div v-if="title" class="post-Info post-Title">
+        <h1>{{ title }}</h1>
+      </div>
+      <div v-if="thumbnail" class="post-Thumbnail">
+        <img :src="thumbnail" />
+      </div>
+      <MarkdownItem v-if="content" :input="content" class="post-Content" />
+      <div v-if="image_0" class="post-Images">
+        <img v-if="image_0" :src="image_0" />
+        <img v-if="image_1" :src="image_1" />
+        <img v-if="image_2" :src="image_2" />
+        <img v-if="image_3" :src="image_3" />
+        <img v-if="image_4" :src="image_4" />
+        <img v-if="image_5" :src="image_5" />
+        <img v-if="image_6" :src="image_6" />
+        <img v-if="image_7" :src="image_7" />
+        <img v-if="image_8" :src="image_8" />
+        <img v-if="image_9" :src="image_9" />
+      </div>
+    </li>
 
     <router-link
       v-if="previous_url"
@@ -40,7 +38,7 @@
     >
       <img class="icon icon-Right" src="@/assets/images/right.svg" />
     </router-link>
-  </section>
+  </ul>
 </template>
 
 <script>
