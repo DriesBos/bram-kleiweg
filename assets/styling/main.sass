@@ -15,18 +15,25 @@ body, html
   display: flex
   justify-content: center
   align-items: center
+  background: black
+  transition: background .5s ease
+  &.hover
+    background: white
+    h1
+      color: black
+      // border-bottom: .25vmin black solid
   h1
+    color: white
     font-size: 10vmin
     cursor: pointer
     text-decoration: none !important
-    border-bottom: .25vmin transparent solid
+    // border-bottom: .25vmin transparent solid
     transition: all $transition-links
-    &:hover
-      border-bottom: .25vmin black solid
     &:before
       font-size: 4vmin
-    @media (hover: none)
-      border-bottom: .25vmin black solid
+  @media (hover: none)
+    border-bottom: .25vmin black solid
+
 
 @media all and (min-width: $breakpoint)
   .view-General
@@ -34,7 +41,6 @@ body, html
     display: flex
     height: 100vh
     flex-direction: column
-    // background: black
 
   .view-Horizontal
     flex: 1
