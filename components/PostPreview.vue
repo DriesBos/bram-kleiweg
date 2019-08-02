@@ -1,11 +1,7 @@
 <template>
-  <li class="post-Item">
-    <nuxt-link :to="'/blog/' + id" v-if="title" tag="div" class="post-Info">
-      <h1>{{ title }}</h1>
-    </nuxt-link>
-    <nuxt-link :to="'/blog/' + id" tag="div" v-if="thumbnail" class="post-Thumbnail">
-      <img :src="thumbnail" />
-    </nuxt-link>
+  <li :to="'/blog/' + id" class="post-Item">
+    <figcaption v-if="title" class="post-Info">{{ title }}</figcaption>
+    <img v-if="thumbnail" class="post-Thumbnail" :src="thumbnail" />
   </li>
 </template>
 

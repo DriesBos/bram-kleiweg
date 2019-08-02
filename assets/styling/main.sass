@@ -2,6 +2,9 @@
 @import '~/assets/styling/typography.sass'
 @import '~/assets/styling/transitions.sass'
 
+body, html
+  position: relative
+
 .view-General
   position: relative
   display: flex
@@ -34,52 +37,30 @@
   display: flex
   flex-wrap: nowrap
   overflow-x: auto
-  background: purple
   padding-left: $spacing-3
+  padding-bottom: $spacing-3
+  -webkit-overflow-scrolling: touch
+  align-items: flex-end
   .post-Item
     flex: 0 0 auto
-    height: 100%
-    background: blue
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    > div
-      cursor: pointer
-      margin-bottom: $spacing-3
-    .post-Info
-      background: orange
-    .post-Thumbnail
-      position: relative
-      width: 40vmin
-      background: green
-      img
-        width: 100%
-        opacity: .5
-    .post-Info
+    display: inline-block
+    position: relative
+    height: 100% // fallback
+    max-height: 100%
+    figcaption
+      display: block
+      padding-bottom: $spacing-3
       text-align: right
-  .post-Item:nth-child(1)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(2)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(3)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(4)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(5)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(6)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:nth-child(7)
-    margin-right: (random(125) + 50)+px
-    // padding-top: (random(150))+px
-  .post-Item:last-child
-    padding-right: $spacing-3
+    img
+      position: relative
+      display: block
+      height: calc(100% - 65px)
+      max-height: 100%
+      // opacity: .6
+  @for $i from 0 to 999
+    .post-Item:nth-child(#{$i})
+      margin-right: (random(125) + 50)+px
+      height: random(22) + 78%
 
 .view-Vertical
   display: flex
