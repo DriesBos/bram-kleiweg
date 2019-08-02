@@ -1,8 +1,8 @@
 <template>
-  <li :to="'/blog/' + id" class="post-Item">
+  <nuxt-link :to="'/blog/' + id" tag="li" class="post-Item">
     <figcaption v-if="title" class="post-Info">{{ title }}</figcaption>
     <img v-if="thumbnail" class="post-Thumbnail" :src="thumbnail" />
-  </li>
+  </nuxt-link>
 </template>
 
 <script>
