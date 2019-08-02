@@ -40,8 +40,8 @@ body, html
     display: flex
     flex-wrap: nowrap
     overflow-x: auto
-    padding-left: $spacing-3
-    padding-bottom: $spacing-3
+    padding-left: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
     -webkit-overflow-scrolling: touch
     align-items: flex-end
     .post-Item
@@ -53,7 +53,7 @@ body, html
       cursor: pointer
       figcaption
         display: block
-        padding-bottom: $spacing-1
+        padding-bottom: var(--spacing-one)
         text-align: right
       img
         position: relative
@@ -61,7 +61,7 @@ body, html
         height: calc(100% - 41px)
         max-height: 100%
     .post-Item:last-child
-      padding-right: $spacing-4
+      padding-right: var(--spacing-four)
     @for $i from 0 to 999
       .post-Item:nth-child(#{$i})
         margin-right: (random(125) + 50)+px
@@ -82,19 +82,19 @@ body, html
       flex-direction: column
       align-items: flex-start
       > div
-        padding-bottom: $spacing-3
+        padding-bottom: var(--spacing-three)
       > div:last-child
-        padding-bottom: $spacing-4
+        padding-bottom: var(--spacing-four)
       img
         width: 100%
-        margin-bottom: $spacing-3
+        margin-bottom: var(--spacing-three)
       img:last-child
         margin-bottom: 0
     .post-Navigation
       position: fixed
       top: 50%
       transform: translateY(-50%)
-      padding: $spacing-3
+      padding: var(--spacing-three)
       cursor: pointer
       &_Left
         left: 0
@@ -115,10 +115,10 @@ header
     display: flex
     li
       img
-        margin-right: $spacing-1
+        margin-right: var(--spacing-one)
 
   .header-Item
-    padding: $spacing-3
+    padding: var(--spacing-three)
     cursor: pointer
     p, a
       border-bottom: 1px transparent solid
@@ -137,22 +137,22 @@ header
       transition: border-bottom $transition-links
     li:first-child
       cursor: default
-      padding-left: $spacing-3
-      padding-top: $spacing-3
-      padding-right: $spacing-3
+      padding-left: var(--spacing-three)
+      padding-top: var(--spacing-three)
+      padding-right: var(--spacing-three)
     li:nth-child(n+2)
       transition: visibility .3s ease-in-out, opacity .3s ease-in-out
       left: 0
       width: 251px
       visibility: hidden
       opacity: 0
-      padding-left: $spacing-3
+      padding-left: var(--spacing-three)
       cursor: pointer
       &:hover
         p, a
           border-bottom: 1px black solid
     li:last-child
-      padding-bottom: $spacing-3
+      padding-bottom: var(--spacing-three)
     &:hover
       li:nth-child(n+2)
         visibility: visible
@@ -188,7 +188,6 @@ header
   header
     position: sticky
     pointer-events: none
-    border-bottom: 1px solid black
     .header-Item
       pointer-events: auto
   .view-General
@@ -197,22 +196,22 @@ header
     display: flex
     flex-direction: column
     justify-content: flex-start
-    padding-left: $spacing-3
-    padding-right: $spacing-3
+    padding-left: var(--spacing-three)
+    padding-right: var(--spacing-three)
     width: 100%
     .post-Item
       display: flex
       flex-direction: column
       width: 100%
       height: auto
-      margin-bottom: $spacing-4
+      margin-bottom: var(--spacing-four)
       > div, figcaption
-        margin-bottom: $spacing-3
+        margin-bottom: var(--spacing-three)
       > div:last-child
         margin-bottom: 0
       .post-Images
         img
-          margin-bottom: $spacing-3
+          margin-bottom: var(--spacing-three)
         img:last-child
           margin-bottom: 0
       img
@@ -220,12 +219,12 @@ header
         width: 100%
         height: auto
     .post-Item:first-child
-      margin-top: $spacing-3
+      margin-top: var(--spacing-three)
     .post-Navigation
       position: fixed
       top: 0
       right: 0
-      padding: $spacing-3
+      padding: var(--spacing-three)
       cursor: pointer
       &_Left
         right: 70px
