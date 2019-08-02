@@ -75,29 +75,21 @@ body, html
     justify-content: space-around
     width: 100%
     max-width: 660px
-    padding-top: 95px
-    padding-bottom: $spacing-3
+    margin-top: 95px
   .post-Item
     display: flex
+    height: 100%
     flex-direction: column
-    padding-bottom: $spacing-3
-    border-bottom: 1px black solid
-    margin-bottom: $spacing-3
+    align-items: flex-start
     > div
-      margin-bottom: $spacing-3
+      padding-bottom: $spacing-3
     > div:last-child
-      margin-bottom: 0
+      padding-bottom: $spacing-4
     img
       width: 100%
       margin-bottom: $spacing-3
     img:last-child
       margin-bottom: 0
-    .post-Info
-      display: flex
-      span
-        font-size: calc(#{$font-base} / 2)
-        transform: translateY(4px)
-        margin-left: .1em
   .post-Navigation
     position: fixed
     top: 50%
@@ -152,10 +144,6 @@ header
       opacity: 0
       padding-left: $spacing-3
       cursor: pointer
-      // a
-      //   background: rgba(255,255,255,0.7)
-      //   -webkit-backdrop-filter: saturate(180%) blur(2px)
-      //   backdrop-filter: saturate(180%) blur(2px)
       &:hover
         p, a
           border-bottom: 1px black solid
