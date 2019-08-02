@@ -6,13 +6,13 @@ body, html
   position: relative
 
 .view-Landing
-  > div
-    width: 100vw
-    height: 100vh
-    overflow: hidden
-    display: flex
-    justify-content: center
-    align-items: center
+  position: fixed
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  display: flex
+  justify-content: center
+  align-items: center
   h1
     position: relative
     font-size: 10vmin
@@ -24,6 +24,8 @@ body, html
       border-bottom: .25vmin black solid
     &:before
       font-size: 4vmin
+    @media (hover: none)
+      border-bottom: .25vmin black solid
 
 @media all and (min-width: $breakpoint)
   .view-General
