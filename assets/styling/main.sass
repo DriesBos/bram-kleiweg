@@ -5,12 +5,6 @@
 body, html
   position: relative
 
-.view-General
-  position: relative
-  display: flex
-  height: 100vh
-  flex-direction: column
-
 .view-Landing
   > div
     width: 100vw
@@ -31,74 +25,84 @@ body, html
     &:before
       font-size: 4vmin
 
-.view-Horizontal
-  flex: 1
-  display: flex
-  flex-wrap: nowrap
-  overflow-x: auto
-  padding-left: $spacing-3
-  padding-bottom: $spacing-3
-  -webkit-overflow-scrolling: touch
-  align-items: flex-end
-  .post-Item
-    flex: 0 0 auto
-    display: inline-block
+@media all and (min-width: $breakpoint)
+  .view-General
     position: relative
-    height: 100% // fallback
-    max-height: 100%
-    cursor: pointer
-    figcaption
-      display: block
-      padding-bottom: $spacing-1
-      text-align: right
-    img
-      position: relative
-      display: block
-      height: calc(100% - 41px)
-      max-height: 100%
-  .post-Item:last-child
-    padding-right: $spacing-4
-  @for $i from 0 to 999
-    .post-Item:nth-child(#{$i})
-      margin-right: (random(125) + 50)+px
-      height: random(22) + 78%
-
-.view-Vertical
-  display: flex
-  flex-direction: column
-  justify-content: space-around
-  align-items: center
-  min-height: 100vh
-  .post-Item
     display: flex
-    height: 100%
-    width: 100%
-    max-width: 660px
-    margin-top: 95px
+    height: 100vh
     flex-direction: column
-    align-items: flex-start
-    > div
-      padding-bottom: $spacing-3
-    > div:last-child
-      padding-bottom: $spacing-4
-    img
-      width: 100%
-      margin-bottom: $spacing-3
-    img:last-child
-      margin-bottom: 0
-  .post-Navigation
-    position: fixed
-    top: 50%
-    transform: translateY(-50%)
-    padding: $spacing-3
-    cursor: pointer
-    &_Left
-      left: 0
-    &_Right
-      right: 0
 
-// Mobile
-.view-Horizontal, .view-Vertical
+  .view-Horizontal
+    flex: 1
+    display: flex
+    flex-wrap: nowrap
+    overflow-x: auto
+    padding-left: $spacing-3
+    padding-bottom: $spacing-3
+    -webkit-overflow-scrolling: touch
+    align-items: flex-end
+    .post-Item
+      flex: 0 0 auto
+      display: inline-block
+      position: relative
+      height: 100% // fallback
+      max-height: 100%
+      cursor: pointer
+      figcaption
+        display: block
+        padding-bottom: $spacing-1
+        text-align: right
+      img
+        position: relative
+        display: block
+        height: calc(100% - 41px)
+        max-height: 100%
+    .post-Item:last-child
+      padding-right: $spacing-4
+    @for $i from 0 to 999
+      .post-Item:nth-child(#{$i})
+        margin-right: (random(125) + 50)+px
+        height: random(22) + 78%
+
+  .view-Vertical
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: center
+    min-height: 100vh
+    .post-Item
+      display: flex
+      height: 100%
+      width: 100%
+      max-width: 660px
+      margin-top: 95px
+      flex-direction: column
+      align-items: flex-start
+      > div
+        padding-bottom: $spacing-3
+      > div:last-child
+        padding-bottom: $spacing-4
+      img
+        width: 100%
+        margin-bottom: $spacing-3
+      img:last-child
+        margin-bottom: 0
+    .post-Navigation
+      position: fixed
+      top: 50%
+      transform: translateY(-50%)
+      padding: $spacing-3
+      cursor: pointer
+      &_Left
+        left: 0
+      &_Right
+        right: 0
+
+  .header-Vertical
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 999
 
 header
   position: relative
@@ -156,13 +160,6 @@ header
       p, a
         border-bottom: 1px black solid
 
-
-.header-Vertical
-  position: fixed
-  top: 0
-  left: 0
-  z-index: 999
-
 .icon
   &-Close
     width: 20px
@@ -183,3 +180,55 @@ header
     right: 0
     font-size: calc(#{$font-base} / 2)
     transform: translate(.75em, -.75em)
+
+// // Mobile // //
+
+@media all and (max-width: $breakpoint)
+  header
+    position: sticky
+    pointer-events: none
+    border-bottom: 1px solid black
+    .header-Item
+      pointer-events: auto
+  .view-General
+    position: relative
+  .view-Horizontal, .view-Vertical
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    padding-left: $spacing-3
+    padding-right: $spacing-3
+    width: 100%
+    .post-Item
+      display: flex
+      flex-direction: column
+      width: 100%
+      height: auto
+      margin-bottom: $spacing-4
+      > div, figcaption
+        margin-bottom: $spacing-3
+      > div:last-child
+        margin-bottom: 0
+      .post-Images
+        img
+          margin-bottom: $spacing-3
+        img:last-child
+          margin-bottom: 0
+      img
+        display: inline-block
+        width: 100%
+        height: auto
+    .post-Item:first-child
+      margin-top: $spacing-3
+    .post-Navigation
+      position: fixed
+      top: 0
+      right: 0
+      padding: $spacing-3
+      cursor: pointer
+      &_Left
+        right: 70px
+        padding-right: 16px
+      &_Right
+        padding-left: 16px
+
