@@ -32,8 +32,8 @@
     <!-- Toggle -->
     <div
       v-if="!slider"
-      @click="toggleSliderMenu"
       @mouseover="menu = true"
+      @mouseleave="menu = false"
       class="menu-Slider menu-Toggle"
     >
       <ul>
@@ -41,7 +41,7 @@
           <img class="icon icon-Close" src="@/assets/images/close.svg" />
         </li>
         <li v-if="!menu">
-          <img class="icon icon-Close" src="@/assets/images/close-half.svg" />
+          <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
         </li>
       </ul>
     </div>

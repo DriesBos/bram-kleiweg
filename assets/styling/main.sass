@@ -16,8 +16,9 @@ body, html
   justify-content: center
   align-items: center
   transition: transform .5s ease
-  background: hsla(0, 0%, 100%, 1)
+  background: hsla(0, 0%, 100%, .9)
   border-right: 2px solid black
+  border-left: 2px solid black
   z-index: 999
   transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
   &.slider
@@ -28,6 +29,8 @@ body, html
   &.menu
     transform: translateX(calc(-100vw + #{var(--menu-open)}))
     transition: transform .3s ease
+    .menu-Toggle
+      transform: rotate(-90deg) translateY(-210px)
   h1
     font-size: 10vmin
     cursor: pointer
@@ -43,6 +46,8 @@ body, html
     height: 100%
     li
       cursor: pointer
+      &.nuxt-link-exact-active
+        text-decoration: underline !important
 
   .menu-Open
     pointer-events: none
@@ -59,6 +64,9 @@ body, html
         padding-left: var(--spacing-three)
       li:first-child
         padding-top: var(--spacing-three)
+      li:nth-child(2), li:nth-child(3)
+        &.active
+          text-decoration: underline
       li:last-child
         padding-top: var(--spacing-three)
         padding-bottom: var(--spacing-three)
@@ -67,7 +75,7 @@ body, html
   .menu-Toggle
     pointer-events: none
     width: 100vh
-    height: var(--menu-collapsed)
+    height: var(--menu-open)
     transform: rotate(-90deg) translateY(-64px)
     transform-origin: top right
     ul
@@ -106,19 +114,16 @@ body, html
     position: relative
     display: flex
     height: 100vh
-    width: 100vw
     flex-direction: column
-    align-items: flex-end
-    overflow-x: auto
   .view-Horizontal
-    position: relative
     flex: 1
     display: flex
     flex-wrap: nowrap
-    justify-content: flex-start
-    padding-left: var(--spacing-three)
+    overflow-x: auto
+    padding-left: calc(#{var(--spacing-four)} + #{var(--menu-collapsed)})
     -webkit-overflow-scrolling: touch
     align-items: flex-end
+    border-right: 2px solid black
     .post-Item
       flex: 0 0 auto
       display: inline-block
@@ -128,9 +133,6 @@ body, html
       cursor: pointer
       padding-top: var(--spacing-three)
       padding-bottom: var(--spacing-three)
-      padding-left: var(--spacing-three)
-      padding-right: var(--spacing-three)
-      // border-right: 2px solid black
       figcaption
         display: block
         padding-bottom: var(--spacing-one)
@@ -153,7 +155,9 @@ body, html
     justify-content: space-around
     align-items: center
     min-height: 100vh
-    width: calc(100% - (#{var(--menu-collapsed)} + #{var(--spacing-four)}))
+    width: calc(100% - #{var(--menu-collapsed)})
+    align-self: flex-end
+    border-right: 2px solid black
     .post-Item
       display: flex
       height: 100%
@@ -175,13 +179,18 @@ body, html
         margin-bottom: 0
     .post-Navigation
       position: fixed
-      top: 50%
-      transform: translateY(-50%)
       padding: var(--spacing-three)
       cursor: pointer
       &_Left
-        left: calc(#{var(--menu-collapsed)} + #{var(--spacing-four)})
+        top: 50%
+        transform: translateY(-50%)
+        left: calc(0px + #{var(--menu-collapsed)})
       &_Right
+        top: 50%
+        transform: translateY(-50%)
+        right: 0
+      &_Close
+        top: 0
         right: 0
 
   .header-Vertical

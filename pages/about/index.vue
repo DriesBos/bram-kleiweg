@@ -9,6 +9,9 @@
       </div>
       <MarkdownItem v-if="content" :input="content" class="post-Content" />
     </li>
+    <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
+      <img class="icon icon-Close" src="@/assets/images/close.svg" />
+    </router-link>
   </ul>
 </template>
 

@@ -22,6 +22,9 @@
       </div>
     </li>
 
+    <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
+      <img class="icon icon-Close" src="@/assets/images/close.svg" />
+    </router-link>
     <router-link
       v-if="previous_url"
       class="post-Navigation post-Navigation_Left"
