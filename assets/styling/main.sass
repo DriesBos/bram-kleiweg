@@ -47,6 +47,7 @@ body, html
   .menu-Open
     pointer-events: none
     height: 100%
+    padding-top: var(--spacing-four)
     ul
       display: flex
       flex-direction: column
@@ -65,20 +66,31 @@ body, html
 
   .menu-Toggle
     pointer-events: none
+    width: 100vh
+    height: var(--menu-collapsed)
+    transform: rotate(-90deg) translateY(-64px)
+    transform-origin: top right
     ul
       display: flex
       justify-content: flex-end
       align-items: center
       height: 100%
       li
+        position: relative
         pointer-events: auto
+        padding-left: var(--spacing-three)
+        padding-right: var(--spacing-three)
+        padding-top: 23px
+        height: 100%
+        img
+          transform: rotate(90deg)
+
+  .menu-Logo
+    pointer-events: none
     width: 100vh
     height: var(--menu-collapsed)
     transform: rotate(-90deg) translateY(-64px)
     transform-origin: top right
-
-  .menu-Logo
-    pointer-events: none
     ul
       display: flex
       justify-content: flex-start
@@ -86,12 +98,8 @@ body, html
       height: 100%
       li
         pointer-events: auto
-        padding: var(--spacing-three)
-    width: 100vh
-    height: var(--menu-collapsed)
-    transform: rotate(-90deg) translateY(-64px)
-    transform-origin: top right
-
+        padding-left: var(--spacing-three)
+        padding-right: var(--spacing-three)
 
 @media all and (min-width: $breakpoint)
   .view-General
