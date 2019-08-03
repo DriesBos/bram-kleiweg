@@ -15,19 +15,17 @@ body, html
   display: flex
   justify-content: center
   align-items: center
-  background: hsla(0, 0%, 0%, 1)
-  transition: background .5s ease, transform .7s ease
+  background: hsla(0, 0%, 100%, 1)
+  transition: transform .7s ease
   border-right: 2px solid black
-  &.hover
-    background: hsla(0, 0%, 100%, 1)
-    h1
-      color: black
+  &.hover, &.counter
+    transform: translateX(calc(0px - #{var(--menu-collapsed)}))
   &.click
     transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
   &.menu
     transform: translateX(calc(-100vw + #{var(--menu-open)}))
   h1
-    color: white
+    // color: white
     font-size: 10vmin
     cursor: pointer
     text-decoration: none !important
@@ -63,21 +61,23 @@ body, html
     position: relative
     display: flex
     height: 100vh
+    width: 100vw
     flex-direction: column
     align-items: flex-end
+    overflow-x: auto
     // background: black
 
   .view-Horizontal
+    position: relative
     flex: 1
     display: flex
     flex-wrap: nowrap
+    justify-content: flex-start
     overflow-x: auto
     padding-left: var(--spacing-three)
-    padding-top: var(--spacing-three)
-    padding-bottom: var(--spacing-three)
     -webkit-overflow-scrolling: touch
     align-items: flex-end
-    margin-left: calc(#{var(--menu-collapsed)} + #{var(--spacing-four)}
+    // margin-left: calc(#{var(--menu-collapsed)} + #{var(--spacing-four)}
     .post-Item
       flex: 0 0 auto
       display: inline-block
@@ -85,6 +85,11 @@ body, html
       height: 100% // fallback
       max-height: 100%
       cursor: pointer
+      padding-top: var(--spacing-three)
+      padding-bottom: var(--spacing-three)
+      padding-left: var(--spacing-three)
+      padding-right: var(--spacing-three)
+      border-right: 2px solid black
       figcaption
         display: block
         padding-bottom: var(--spacing-one)
