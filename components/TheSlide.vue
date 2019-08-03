@@ -1,32 +1,19 @@
 <template>
-  <section class="view-Landing">
-    <div>
+  <section class="theSlide" :class="[{slider: slider}, {peek: peek}, {menu: menu}]">
+    <!-- Landing text -->
+    <div v-if="slider" @click="toggleSlider" @mouseover="peek = true" @mouseleave="peek = false">
       <h1 class="logo">bram kleiweg</h1>
     </div>
 
-    <div class="menu-Toggle menu-Collapsed">
+    <!-- Menu -->
+    <div
+      v-if="!slider"
+      @mouseover="menu = true"
+      @mouseleave="menu = false"
+      class="menu-Slider menu-Open"
+    >
       <ul>
-        <li>
-          <p class="logo">bram kleiweg</p>
-        </li>
-        <li>
-          <img class="icon icon-Close" src="@/assets/images/close.svg" />
-        </li>
-      </ul>
-    </div>
-
-    <div class="menu-Toggle menu-Open">
-      <ul>
-        <li>
-          <p class="logo">bram kleiweg</p>
-        </li>
-        <li>
-          <p class="logo">menu toggle</p>
-        </li>
         <ul class="header-Filter">
-          <li>
-            <p>Projects</p>
-          </li>
           <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
             <a>All Projects</a>
           </nuxt-link>
@@ -38,11 +25,27 @@
             <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
           </li>
         </ul>
+        <br />
         <nuxt-link class="header-About header-Item" tag="li" to="/about">
           <p>About</p>
         </nuxt-link>
-        <li>
-          <p>COUNTER</p>
+      </ul>
+    </div>
+
+    <!-- Toggle -->
+    <!-- <div v-if="!slider" class="menu-Slider menu-Toggle">
+      <ul>
+        <li @click="toggleSliderMenu">
+          <img class="icon icon-Close" src="@/assets/images/close.svg" />
+        </li>
+      </ul>
+    </div>-->
+
+    <!-- Logo -->
+    <div v-if="!slider" class="menu-Slider menu-Logo">
+      <ul>
+        <li @click="toggleSlider">
+          <p class="logo">bram kleiweg</p>
         </li>
       </ul>
     </div>
@@ -52,6 +55,26 @@
 <script>
 import { mapState } from 'vuex'
 export default {
+  data: function() {
+    return {
+      slider: true,
+      peek: false,
+      menu: false
+    }
+  },
+  methods: {
+    toggleSlider: function() {
+      this.slider = !this.slider
+      this.menu = false
+      this.peek = false
+    },
+    toggleSliderPeek: function() {
+      this.peek = !this.peek
+    },
+    toggleSliderMenu: function() {
+      this.menu = !this.menu
+    }
+  },
   computed: mapState({
     categories: state => state.categories.list,
     selectedCategory(state) {

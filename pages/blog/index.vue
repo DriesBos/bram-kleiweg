@@ -12,30 +12,11 @@
 
 <script>
 import PostPreview from '~/components/PostPreview.vue'
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   components: {
     PostPreview: PostPreview
-  },
-  data: function() {
-    return {
-      hover: false,
-      click: false,
-      menu: false
-    }
-  },
-  methods: {
-    mouseOver: function() {
-      this.hover = true
-    },
-    mouseClick: function() {
-      this.click = !this.click
-    },
-    menuToggle: function() {
-      this.menu = !this.menu
-    },
-    ...mapMutations(['slideToggle'])
   },
   computed: mapState({
     projects: state => state.projects.list,
