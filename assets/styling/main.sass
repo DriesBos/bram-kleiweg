@@ -47,10 +47,11 @@ body, html
   .menu-Open
     pointer-events: none
     height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
     ul
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      height: 100%
       li
         pointer-events: auto
         padding-right: var(--menu-collapsed)
@@ -58,7 +59,9 @@ body, html
       li:first-child
         padding-top: var(--spacing-three)
       li:last-child
+        padding-top: var(--spacing-three)
         padding-bottom: var(--spacing-three)
+        flex-grow: 1
 
   .menu-Toggle
     pointer-events: none

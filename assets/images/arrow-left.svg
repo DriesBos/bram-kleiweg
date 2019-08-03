@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>arrow-left</title>
+    <desc>Created with Sketch.</desc>
+    <g id="arrow-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M0.707000136,7.5 L8,15.2986851" id="Line" stroke="#000000"></path>
+        <path d="M8,0.712486412 L0.707000136,7.5" id="Line-2" stroke="#000000"></path>
+        <path d="M1.5,7.5 L15.5,7.5" id="Line-3" stroke="#000000"></path>
+    </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>arrow-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="arrow-right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M8,7.5 L15.2929999,15.2947998" id="Line" stroke="#000000" transform="translate(11.646500, 11.397400) scale(-1, 1) translate(-11.646500, -11.397400) "></path>
+        <path d="M15.2929999,0.705078125 L8,7.5" id="Line-2" stroke="#000000" transform="translate(11.646500, 4.102539) scale(-1, 1) translate(-11.646500, -4.102539) "></path>
+        <path d="M14.5,7.5 L0.5,7.5" id="Line-3" stroke="#000000" transform="translate(7.500000, 7.500000) scale(-1, 1) translate(-7.500000, -7.500000) "></path>
+    </g>
+</svg>

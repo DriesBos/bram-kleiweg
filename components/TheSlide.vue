@@ -13,19 +13,16 @@
       class="menu-Slider menu-Open"
     >
       <ul>
-        <ul class="header-Filter">
-          <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
-            <a>All Projects</a>
-          </nuxt-link>
-          <li
-            v-for="category in categories"
-            v-bind:class="{active: selectedCategory == category.id}"
-            v-bind:key="category.id"
-          >
-            <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
-          </li>
-        </ul>
-        <br />
+        <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
+          <a>All Projects</a>
+        </nuxt-link>
+        <li
+          v-for="category in categories"
+          v-bind:class="{active: selectedCategory == category.id}"
+          v-bind:key="category.id"
+        >
+          <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
+        </li>
         <nuxt-link class="header-About header-Item" tag="li" to="/about">
           <p>About</p>
         </nuxt-link>
@@ -33,18 +30,23 @@
     </div>
 
     <!-- Toggle -->
-    <!-- <div v-if="!slider" class="menu-Slider menu-Toggle">
+    <div v-if="!slider" class="menu-Slider menu-Toggle">
       <ul>
         <li @click="toggleSliderMenu">
-          <img class="icon icon-Close" src="@/assets/images/close.svg" />
+          <img class="icon icon-Close" src="@/assets/images/close-half.svg" />
         </li>
       </ul>
-    </div>-->
+    </div>
 
     <!-- Logo -->
-    <div v-if="!slider" class="menu-Slider menu-Logo">
+    <div
+      v-if="!slider"
+      @click="toggleSlider"
+      @mouseover="menu = true"
+      class="menu-Slider menu-Logo"
+    >
       <ul>
-        <li @click="toggleSlider">
+        <li>
           <p class="logo">bram kleiweg</p>
         </li>
       </ul>
