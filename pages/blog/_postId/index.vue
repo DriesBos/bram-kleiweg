@@ -22,25 +22,27 @@
       </div>
     </li>
 
-    <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
-      <img class="icon icon-Close" src="@/assets/images/close.svg" />
-    </router-link>
-    <router-link
-      v-if="previous_url"
-      class="post-Navigation post-Navigation_Left"
-      tag="a"
-      :to="previous_url"
-    >
-      <img class="icon icon-Left" src="@/assets/images/arrow-left.svg" />
-    </router-link>
-    <router-link
-      v-if="next_url"
-      class="post-Navigation post-Navigation_Right"
-      tag="a"
-      :to="next_url"
-    >
-      <img class="icon icon-Right" src="@/assets/images/arrow-right.svg" />
-    </router-link>
+    <div class="post-Navigation_Wrapper">
+      <router-link
+        v-if="previous_url"
+        class="post-Navigation post-Navigation_Left"
+        tag="a"
+        :to="previous_url"
+      >
+        <img class="icon icon-Left" src="@/assets/images/arrow-left.svg" />
+      </router-link>
+      <router-link
+        v-if="next_url"
+        class="post-Navigation post-Navigation_Right"
+        tag="a"
+        :to="next_url"
+      >
+        <img class="icon icon-Right" src="@/assets/images/arrow-right.svg" />
+      </router-link>
+      <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
+        <img class="icon icon-Close" src="@/assets/images/close.svg" />
+      </router-link>
+    </div>
   </ul>
 </template>
 

@@ -263,8 +263,8 @@ header
 
 .icon
   &-Close
-    width: 20px
-    height: 20px
+    width: 22px
+    height: 22px
   &-Left
     width: 22px
     height: 22px
@@ -280,23 +280,24 @@ header
     top: 0
     right: 0
     font-size: calc(#{$font-base} / 2)
-    transform: translate(.75em, -.75em)
+    line-height: 1
+    transform: translate(.55em, .55em)
 
 // // Mobile // //
 
 @media all and (max-width: $breakpoint)
   header
-    position: sticky
-    pointer-events: none
-    .header-Item
-      pointer-events: auto
+    // position: sticky
+    // pointer-events: none
+    // .header-Item
+    //   pointer-events: auto
   .view-General
     position: relative
   .view-Horizontal, .view-Vertical
     display: flex
     flex-direction: column
     justify-content: flex-start
-    padding-left: var(--spacing-three)
+    padding-left: calc(#{var(--spacing-three)} + #{var(--menu-collapsed)})
     padding-right: var(--spacing-three)
     width: 100%
     .post-Item
@@ -320,15 +321,16 @@ header
         height: auto
     .post-Item:first-child
       margin-top: var(--spacing-three)
-    .post-Navigation
+    .post-Navigation_Wrapper
       position: fixed
       top: 0
       right: 0
-      padding: var(--spacing-three)
       cursor: pointer
-      &_Left
-        right: 70px
-        padding-right: 16px
-      &_Right
-        padding-left: 16px
+      display: flex
+      a
+        padding: var(--spacing-three)
+        padding-left: calc(#{var(--spacing-three)} / 2
+        padding-right: calc(#{var(--spacing-three)} / 2
+      a:last-child
+        padding-right: var(--spacing-three)
 
