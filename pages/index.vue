@@ -1,22 +1,29 @@
 <template>
-  <section class="view-Landing" :class="{ hover }">
-    <div @mouseover="mouseOver">
-      <nuxt-link tag="h1" to="/blog" class="logo">bram kleiweg</nuxt-link>
-    </div>
-  </section>
+  <ul class="view-Horizontal view-Blog post-List">
+    <PostPreview
+      v-for="post in projects"
+      :id="post.id"
+      :key="post.id"
+      :title="post.title"
+      :thumbnail="post.thumbnail"
+    />
+  </ul>
 </template>
 
 <script>
+import PostPreview from '~/components/PostPreview.vue'
+import { mapState } from 'vuex'
+
 export default {
-  data: function() {
-    return {
-      hover: false
-    }
+  components: {
+    PostPreview: PostPreview
   },
-  methods: {
-    mouseOver: function() {
-      this.hover = true
+  computed: mapState({
+    projects: state => state.projects.list,
+    categories: state => state.categories.list,
+    selectedCategory(state) {
+      return this.$route.params.categoryId
     }
-  }
+  })
 }
 </script>
