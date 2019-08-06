@@ -1,6 +1,6 @@
 <template>
-  <ul class="view-Vertical view-Post post-List" :class="[{slider: slider}]">
-    <li class="post-Item">
+  <ul class="view-Vertical view-Post post-List">
+    <li class="post-Item" :class="{slider: slider}">
       <div v-if="title" class="post-Info post-Title">
         <h1>{{ title }}</h1>
       </div>

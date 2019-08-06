@@ -1,6 +1,6 @@
 <template>
   <ul class="view-Vertical view-Profile post-List">
-    <li class="post-Item">
+    <li class="post-Item" :class="{slider: slider}">
       <div v-if="title" class="post-Info">
         <h1 class="logo">{{ title }}</h1>
       </div>
@@ -19,6 +19,7 @@
 
 <script>
 import MarkdownItem from '~/components/MarkdownItem.vue'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -36,6 +37,9 @@ export default {
           content: res.data.story.content.content
         }
       })
-  }
+  },
+  computed: mapState({
+    slider: state => state.slider.slider
+  })
 }
 </script>
