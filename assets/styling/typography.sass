@@ -18,11 +18,19 @@ h1, h2, h3, p, figcaption, a, a:link, a:visited
   -moz-osx-font-smoothing: grayscale
   text-decoration: none
 
-h1, h2
-  font-size: calc(#{$font-base} * 2)
+.theSlide h1
+  font-size: 8vw
+  @media all and (max-width: $breakpoint)
+    font-size: 12vw
 
-a, a:link, a:visited
-  font-family: Helvetica !important
+h1
+  font-size: 4vw
+  @media all and (max-width: $breakpoint)
+    font-size: 8vw
+
+figcaption
+  @media all and (max-width: $breakpoint)
+    font-size: 8vw
 
 strong
   font-weight: bold

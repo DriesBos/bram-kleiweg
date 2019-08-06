@@ -28,13 +28,13 @@ body, html
   &.menu
     transform: translateX(calc(-100vw + #{var(--menu-open)}))
     transition: transform .3s ease
-  h1
-    font-size: 10vmin
     cursor: pointer
     text-decoration: none !important
     transition: all $transition-links
     &:before
       font-size: 4vmin
+  .logo
+    cursor: pointer
 
   .menu-Slider
     position: absolute
@@ -292,9 +292,17 @@ header
     content: '1'
     top: 0
     right: 0
-    font-size: calc(#{$font-base} / 2)
+    font-size: 1vw
     line-height: 1
     transform: translate(.55em, .55em)
+
+h1.logo:before
+  font-size: 1vw
+h3.logo:before
+  font-size: calc(#{$font-base} / 2)
+.theSlide
+  h1.logo:before
+    font-size: 2vw
 
 // // Mobile // //
 
@@ -313,7 +321,8 @@ header
       flex-direction: column
       width: 100%
       height: auto
-      margin-bottom: var(--spacing-four)
+      padding-top: var(--spacing-four)
+      padding-bottom: var(--spacing-four)
       transition: padding-left .35s ease
       padding-left: calc(#{var(--spacing-three)} + #{var(--menu-collapsed)})
       &.slider
