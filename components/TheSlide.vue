@@ -40,6 +40,7 @@
           <nuxt-link class="header-About header-Item" tag="li" to="/about">
             <p>About</p>
           </nuxt-link>
+          <li></li>
         </ul>
       </div>
     </transition>
@@ -62,9 +63,9 @@ import { mapState } from 'vuex'
 export default {
   data: function() {
     return {
-      slider: true,
+      slider: false,
       peek: false,
-      menu: false
+      menu: true
     }
   },
   methods: {

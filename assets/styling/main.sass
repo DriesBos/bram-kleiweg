@@ -18,7 +18,6 @@ body, html
   transition: transform .5s ease
   background: hsla(0, 0%, 100%, .9)
   border-right: 2px solid black
-  border-left: 2px solid black
   z-index: 999
   transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
   &.slider
@@ -49,7 +48,6 @@ body, html
 
   .menu-Open
     pointer-events: none
-    padding-top: var(--spacing-three)
     ul
       display: flex
       flex-direction: column
@@ -59,8 +57,9 @@ body, html
         pointer-events: auto
         padding-right: var(--menu-collapsed)
         padding-left: var(--spacing-three)
+        text-transform: capitalize
       li:first-child
-        padding-top: var(--spacing-three)
+        padding-top: var(--spacing-four)
       li:nth-child(2), li:nth-child(3)
         &.active
           text-decoration: underline
@@ -68,6 +67,7 @@ body, html
         padding-top: var(--spacing-three)
         padding-bottom: var(--spacing-three)
         flex-grow: 1
+        cursor: default
 
   .menu-Clickarea
     // background: purple
@@ -315,6 +315,8 @@ header
           margin-bottom: var(--spacing-three)
         img:last-child
           margin-bottom: 0
+      .post-Info .logo
+        display: inline-block
       img
         display: inline-block
         width: 100%
