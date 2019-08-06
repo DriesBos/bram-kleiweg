@@ -1,11 +1,12 @@
 <template>
-  <ul class="view-Horizontal view-Blog post-List" :class="[{slider: slider}]">
+  <ul class="view-Horizontal view-Blog post-List">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
       :key="post.id"
       :title="post.title"
       :thumbnail="post.thumbnail"
+      :slider="slider"
     />
   </ul>
 </template>
@@ -19,13 +20,10 @@ export default {
     PostPreview: PostPreview
   },
   computed: mapState({
-    projects(state) {
-      const category = state.categories.list.find(
-        category => category.id === this.$route.params.categoryId
-      )
-      return state.projects.list.filter(
-        project => project.tag_list.indexOf(category.name) > -1
-      )
+    projects: state => state.projects.list,
+    categories: state => state.categories.list,
+    selectedCategory(state) {
+      return this.$route.params.categoryId
     },
     slider: state => state.slider.slider
   })

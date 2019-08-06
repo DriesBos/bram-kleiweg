@@ -1,11 +1,12 @@
 <template>
-  <ul class="view-Horizontal view-Blog post-List" :class="[{slider: slider}]">
+  <ul class="view-Horizontal view-Blog post-List">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
       :key="post.id"
       :title="post.title"
       :thumbnail="post.thumbnail"
+      :slider="slider"
     />
   </ul>
 </template>
