@@ -1,5 +1,5 @@
 <template>
-  <ul class="view-Horizontal view-Blog post-List">
+  <ul class="view-Horizontal view-Blog post-List" :class="[{slider: slider}]">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
@@ -23,7 +23,8 @@ export default {
     categories: state => state.categories.list,
     selectedCategory(state) {
       return this.$route.params.categoryId
-    }
+    },
+    slider: state => state.slider.slider
   })
 }
 </script>

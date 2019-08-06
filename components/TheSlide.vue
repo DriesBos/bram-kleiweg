@@ -3,9 +3,9 @@
     <!-- Landing text -->
     <div
       v-if="slider"
-      @click="logoLandingClick"
-      @mouseover="peek = true"
-      @mouseleave="peek = false"
+      @click="toggleSliderStore"
+      @mouseover="toTruePeekStore"
+      @mouseleave="toFalsePeekStore"
     >
       <h1 class="logo">bram kleiweg</h1>
     </div>
@@ -47,7 +47,13 @@
 
     <!-- Logo -->
     <transition name="menuFade">
-      <div v-if="!slider" @click="logoClick" @mouseover="menu = true" class="menu-Slider menu-Logo">
+      <div
+        v-if="!slider"
+        @click="toggleSliderStore"
+        v-on:click.once="menu = false"
+        @mouseover="menu = true"
+        class="menu-Slider menu-Logo"
+      >
         <ul>
           <li>
             <p class="logo">bram kleiweg</p>
@@ -59,40 +65,25 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
-      slider: true,
-      peek: false,
       menu: false
-    }
-  },
-  methods: {
-    toggleSlider: function() {
-      this.slider = !this.slider
-    },
-    toggleSliderPeek: function() {
-      this.peek = !this.peek
-    },
-    toggleSliderMenu: function() {
-      this.menu = !this.menu
-    },
-    logoLandingClick: function() {
-      this.slider = false
-      this.peek = false
-    },
-    logoClick: function() {
-      this.slider = true
-      this.peek = false
-      this.menu = false
     }
   },
   computed: mapState({
     categories: state => state.categories.list,
     selectedCategory(state) {
       return this.$route.params.categoryId
-    }
+    },
+    slider: state => state.slider.slider,
+    peek: state => state.slider.peek
+  }),
+  methods: mapMutations({
+    toggleSliderStore: 'slider/toggleSlider',
+    toTruePeekStore: 'slider/peekToTrue',
+    toFalsePeekStore: 'slider/peekToFalse'
   })
 }
 </script>

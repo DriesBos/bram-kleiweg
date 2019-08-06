@@ -1,5 +1,5 @@
 <template>
-  <ul class="view-Vertical view-Post post-List">
+  <ul class="view-Vertical view-Post post-List" :class="[{slider: slider}]">
     <li class="post-Item">
       <div v-if="title" class="post-Info post-Title">
         <h1>{{ title }}</h1>
@@ -48,6 +48,7 @@
 
 <script>
 import MarkdownItem from '~/components/MarkdownItem.vue'
+import { mapState } from 'vuex'
 
 /* eslint-disable */
 
@@ -57,6 +58,7 @@ function getProjectIndex(projects, id) {
 }
 
 export default {
+  transition: 'page',
   components: {
     MarkdownItem
   },
@@ -93,6 +95,9 @@ export default {
         }
       })
   },
+  computed: mapState({
+    slider: state => state.slider.slider
+  }),
   methods: {
     navigateToProject(id) {
       this.$router.push({ path: `/blog/${id}` })

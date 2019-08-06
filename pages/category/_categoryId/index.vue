@@ -1,5 +1,5 @@
 <template>
-  <ul class="view-Horizontal view-Blog post-List">
+  <ul class="view-Horizontal view-Blog post-List" :class="[{slider: slider}]">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
@@ -26,7 +26,8 @@ export default {
       return state.projects.list.filter(
         project => project.tag_list.indexOf(category.name) > -1
       )
-    }
+    },
+    slider: state => state.slider.slider
   })
 }
 </script>
