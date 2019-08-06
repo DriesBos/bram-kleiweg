@@ -63,9 +63,9 @@ import { mapState } from 'vuex'
 export default {
   data: function() {
     return {
-      slider: false,
+      slider: true,
       peek: false,
-      menu: true
+      menu: false
     }
   },
   methods: {
