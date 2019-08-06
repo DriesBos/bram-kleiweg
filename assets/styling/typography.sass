@@ -1,29 +1,12 @@
 @import '~/assets/styling/variables.sass'
 
 // https://type-scale.com/
-@font-face
-  font-family: 'Avenir'
-  src: url('~assets/fonts/Avenir-Next-LT-Pro.ttf') format('truetype')
-  font-weight: normal
-  font-style: normal
 
 @font-face
   font-family: 'Century Schoolbook'
   src: url('~assets/fonts/1.woff') format('woff')
   font-weight: normal
   font-style: normal
-
-@font-face
-  font-family: 'Avenir'
-  src: url('~assets/fonts/Avenir-Next-LT-Pro-Demi.ttf') format('truetype')
-  font-weight: bold
-  font-style: normal
-
-@font-face
-  font-family: 'Avenir'
-  src: url('~assets/fonts/Avenir-Next-LT-Pro-Italic.ttf') format('truetype')
-  font-weight: normal
-  font-style: italic
 
 h1, h2, h3, p, figcaption, a, a:link, a:visited
   font-family: "Century Schoolbook", Helvetica, Arial, sans-serif
@@ -34,6 +17,12 @@ h1, h2, h3, p, figcaption, a, a:link, a:visited
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   text-decoration: none
+
+h1, h2
+  font-size: calc(#{$font-base} * 2)
+
+a, a:link, a:visited
+  font-family: Helvetica !important
 
 strong
   font-weight: bold

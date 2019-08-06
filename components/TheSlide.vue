@@ -56,7 +56,7 @@
       >
         <ul>
           <li>
-            <p class="logo">bram kleiweg</p>
+            <h3 class="logo">bram kleiweg</h3>
           </li>
         </ul>
       </div>
