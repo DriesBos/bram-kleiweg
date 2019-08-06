@@ -10,7 +10,7 @@
       <MarkdownItem v-if="content" :input="content" class="post-Content" />
     </li>
     <div class="post-Navigation_Wrapper">
-      <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
+      <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/">
         <img class="icon icon-Close" src="@/assets/images/close.svg" />
       </router-link>
     </div>

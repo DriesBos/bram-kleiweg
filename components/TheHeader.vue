@@ -12,7 +12,7 @@
         <li>
           <p>Projects</p>
         </li>
-        <nuxt-link tag="li" to="/blog" v-bind:class="{active: !selectedCategory}">
+        <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}">
           <a>All Projects</a>
         </nuxt-link>
         <li
@@ -32,7 +32,7 @@
       v-if="this.$route.name === 'blog-postId' || this.$route.name === 'about'"
       class="header-Vertical"
     >
-      <nuxt-link class="header-Item" tag="li" to="/blog">
+      <nuxt-link class="header-Item" tag="li" to="/">
         <img class="icon icon-Close" src="@/assets/images/close.svg" />
       </nuxt-link>
     </ul>

@@ -39,7 +39,7 @@
       >
         <img class="icon icon-Right" src="@/assets/images/arrow-right.svg" />
       </router-link>
-      <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/blog">
+      <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/">
         <img class="icon icon-Close" src="@/assets/images/close.svg" />
       </router-link>
     </div>
