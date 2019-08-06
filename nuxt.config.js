@@ -4,9 +4,6 @@ const pkg = require('./package')
 module.exports = {
   mode: 'universal',
 
-  /*
-   ** Headers of the page
-   */
   head: {
     title: 'Bram Kleiweg',
     meta: [
@@ -32,18 +29,19 @@ module.exports = {
     ]
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
   loading: {
     color: '#000',
     heright: '2px',
     throttle: '200'
   },
 
-  /*
-   ** Global CSS
-   */
+  scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    }
+  },
+
   css: [
     '~/assets/styling/reset.css',
     '~/assets/styling/variables.sass',
@@ -52,13 +50,8 @@ module.exports = {
     '~/assets/styling/main.sass'
   ],
 
-  /*
-   ** Plugins to load before mounting the App
-   */
   plugins: [],
-  /*
-   ** Nuxt.js modules
-   */
+
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     [
@@ -72,9 +65,7 @@ module.exports = {
       }
     ]
   ],
-  /*
-   ** Generating routes
-   */
+
   generate: {
     routes: function() {
       return axios
@@ -88,9 +79,7 @@ module.exports = {
         })
     }
   },
-  /*
-   ** Axios module configuration
-   */
+
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
