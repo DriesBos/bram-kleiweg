@@ -6,7 +6,7 @@
   --spacing-three: 32px
   --spacing-four: 64px
   --spacing-five: 128px
-  --menu-collapsed: 64px
+  --menu-collapsed: calc(#{var(--spacing-three)} * 2)
   --menu-open: 210px
 
 $breakpoint: 1000px
@@ -22,3 +22,4 @@ $lineheight-base: 1.5em
     --spacing-three: 1em
     --spacing-four: 2em
     --spacing-five: 4em
+    --menu-collapsed: calc(#{var(--spacing-three)} * 2 + 22px)

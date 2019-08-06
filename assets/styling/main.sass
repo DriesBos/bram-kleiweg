@@ -35,27 +35,17 @@ body, html
       font-size: 4vmin
   .logo
     cursor: pointer
-
-  // .menu-Slider
-  //   position: absolute
-  //   top: 0
-  //   right: 0
-  //   height: 100%
-  //   li
-  //     cursor: pointer
-  //     &.nuxt-link-exact-active
-  //       a, p
-  //         border-bottom: 1px solid black
   &-Menu
     position: absolute
     top: 0
     right: 0
     bottom: 0
-    background: green
+  &-Open
+    width: var(--menu-open)
     ul
       display: flex
       flex-direction: column
-      justify-content: flex-end
+      justify-content: flex-start
       height: 100%
       li
         padding-right: var(--menu-collapsed)
@@ -72,51 +62,20 @@ body, html
         padding-top: var(--spacing-three)
         padding-bottom: var(--spacing-three)
       li:last-child
-        // flex-grow: 1
+        flex-grow: 1
         cursor: default
       li:hover
         a, p
           border-bottom: 1px solid black
-
-  .menu-Clickarea
-    width: var(--menu-open)
-
-  .menu-Toggle
-    pointer-events: none
-    width: 100vh
-    height: var(--menu-collapsed)
-    transform: rotate(-90deg) translateY(-64px)
-    transform-origin: top right
-    ul
-      display: flex
-      justify-content: flex-end
-      align-items: flex-end
-      height: 100%
-      li
-        position: relative
-        pointer-events: auto
-        padding-left: var(--spacing-three)
-        padding-right: var(--spacing-three)
-        padding-top: 23px
-        height: 100%
-        img
-          transform: rotate(90deg)
-
-  .menu-Logo
-    pointer-events: none
-    width: 100vh
-    height: var(--menu-collapsed)
-    transform: rotate(-90deg) translateY(-64px)
-    transform-origin: top right
-    ul
-      display: flex
-      justify-content: flex-start
-      align-items: center
-      height: 100%
-      li
-        pointer-events: auto
-        padding-left: var(--spacing-three)
-        padding-right: var(--spacing-three)
+  &-Collapsed
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    width: var(--menu-collapsed)
+    &_Toggle
+      padding-top: var(--spacing-three)
+      padding-bottom: var(--spacing-three)
+      text-align: center
 
 @media all and (min-width: $breakpoint)
   .view-General
@@ -269,7 +228,6 @@ header
 .icon
   width: 22px
   height: 22px
-  background: purple
 
 .logo
   position: relative
@@ -281,7 +239,6 @@ header
     font-size: 1vw
     line-height: 1
     transform: translate(.55em, .55em)
-
 h1.logo:before
   font-size: 1vw
 h3.logo:before

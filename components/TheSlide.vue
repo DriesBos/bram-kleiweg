@@ -11,51 +11,40 @@
     </div>
 
     <!-- Collapsed -->
-    <div class="theSlide-Collapsed">
-      <div class="menu-Toggle">
-        <ul>
-          <li v-if="!slider && !menu">
-            <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
-          </li>
-        </ul>
-      </div>
-
+    <transition name="menuFade">
       <div
-        v-if="!slider"
-        @click="toggleSliderStore"
-        v-on:click.once="menu = false"
+        v-if="!slider && !menu"
         @mouseover="menu = true"
-        class="menu-Logo"
+        @click="menu = true"
+        class="theSlide-Menu theSlide-Collapsed"
       >
-        <ul>
-          <li>
-            <h3 class="logo">bram kleiweg</h3>
-          </li>
-        </ul>
+        <div class="theSlide-Collapsed_Toggle">
+          <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
+        </div>
       </div>
-    </div>
-
-    <div v-if="!menu && !slider" class="menu-Slider menu-Clickarea" @mouseover="menu = true"></div>
+    </transition>
 
     <!-- Menu -->
-    <div v-if="menu" class="theSlide-Menu" @mouseleave="menu = false">
-      <ul>
-        <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}">
-          <a>All Projects</a>
-        </nuxt-link>
-        <li
-          v-for="category in categories"
-          v-bind:class="{active: selectedCategory == category.id}"
-          v-bind:key="category.id"
-        >
-          <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
-        </li>
-        <nuxt-link tag="li" to="/about">
-          <a>About</a>
-        </nuxt-link>
-        <li></li>
-      </ul>
-    </div>
+    <transition name="menuFade">
+      <div v-if="menu && !slider" class="theSlide-Menu theSlide-Open" @mouseleave="menu = false">
+        <ul>
+          <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}">
+            <a>All Projects</a>
+          </nuxt-link>
+          <li
+            v-for="category in categories"
+            v-bind:class="{active: selectedCategory == category.id}"
+            v-bind:key="category.id"
+          >
+            <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
+          </li>
+          <nuxt-link tag="li" to="/about">
+            <a>About</a>
+          </nuxt-link>
+          <li></li>
+        </ul>
+      </div>
+    </transition>
   </section>
 </template>
 
@@ -64,7 +53,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
-      menu: true
+      menu: false
     }
   },
   computed: mapState({
