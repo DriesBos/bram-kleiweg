@@ -15,7 +15,7 @@ body, html
   display: flex
   justify-content: center
   align-items: center
-  transition: transform .5s ease
+  transition: transform .5s ease // TODO: to transition page
   background: hsla(0, 0%, 100%, .9)
   border-right: 2px solid black
   z-index: 999
@@ -36,32 +36,34 @@ body, html
   .logo
     cursor: pointer
 
-  .menu-Slider
+  // .menu-Slider
+  //   position: absolute
+  //   top: 0
+  //   right: 0
+  //   height: 100%
+  //   li
+  //     cursor: pointer
+  //     &.nuxt-link-exact-active
+  //       a, p
+  //         border-bottom: 1px solid black
+  &-Menu
     position: absolute
     top: 0
     right: 0
-    height: 100%
-    li
-      cursor: pointer
-      &.nuxt-link-exact-active
-        a, p
-          border-bottom: 1px solid black
-
-  .menu-Open
-    pointer-events: none
+    bottom: 0
+    background: green
     ul
       display: flex
       flex-direction: column
-      justify-content: flex-start
+      justify-content: flex-end
       height: 100%
       li
-        pointer-events: auto
         padding-right: var(--menu-collapsed)
         padding-left: var(--spacing-three)
-        text-transform: capitalize
         border-bottom: 1px solid transparent
+        text-transform: capitalize
       li:first-child
-        padding-top: var(--spacing-four)
+        padding-top: var(--spacing-three)
       li:nth-child(2), li:nth-child(3)
         &.active
           a, p
@@ -70,7 +72,7 @@ body, html
         padding-top: var(--spacing-three)
         padding-bottom: var(--spacing-three)
       li:last-child
-        flex-grow: 1
+        // flex-grow: 1
         cursor: default
       li:hover
         a, p
@@ -130,7 +132,6 @@ body, html
     -webkit-overflow-scrolling: touch
     align-items: flex-end
     border-right: 2px solid black
-    // background: lightgrey
     // background: linear-gradient(to right, rgba(255,255,255,0) 0%, #fda520 100%)
     .post-Item
       flex: 0 0 auto
@@ -170,7 +171,6 @@ body, html
     min-height: 100vh
     width: 100%
     align-self: flex-end
-    // background: lightgrey
     // background: linear-gradient(to top, rgba(255,255,255,0) 0%, #fda520 100%)
     .post-Item
       display: flex
@@ -242,9 +242,6 @@ header
   .header-Filter
     position: relative
     flex-direction: column
-    // width: 145px
-    // height: 98px
-    // overflow: visible
     p, a
       border-bottom: 1px transparent solid
       transition: border-bottom $transition-links
@@ -254,11 +251,6 @@ header
       padding-top: var(--spacing-three)
       padding-right: var(--spacing-three)
     li:nth-child(n+2)
-      // transition: visibility .3s ease-in-out, opacity .3s ease-in-out
-      // left: 0
-      // width: 251px
-      // visibility: hidden
-      // opacity: 0
       padding-left: var(--spacing-three)
       cursor: pointer
       &:hover
@@ -275,15 +267,9 @@ header
         border-bottom: 1px black solid
 
 .icon
-  &-Close
-    width: 22px
-    height: 22px
-  &-Left
-    width: 22px
-    height: 22px
-  &-Right
-    width: 22px
-    height: 22px
+  width: 22px
+  height: 22px
+  background: purple
 
 .logo
   position: relative

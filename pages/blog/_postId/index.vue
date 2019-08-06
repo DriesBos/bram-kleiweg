@@ -29,7 +29,7 @@
         tag="a"
         :to="previous_url"
       >
-        <img class="icon icon-Left" src="@/assets/images/arrow-left.svg" />
+        <img class="icon" src="@/assets/images/arrow-left.svg" />
       </router-link>
       <router-link
         v-if="next_url"
@@ -37,10 +37,10 @@
         tag="a"
         :to="next_url"
       >
-        <img class="icon icon-Right" src="@/assets/images/arrow-right.svg" />
+        <img class="icon" src="@/assets/images/arrow-right.svg" />
       </router-link>
       <router-link class="post-Navigation post-Navigation_Close" tag="a" to="/">
-        <img class="icon icon-Close" src="@/assets/images/close.svg" />
+        <img class="icon" src="@/assets/images/close.svg" />
       </router-link>
     </div>
   </ul>
