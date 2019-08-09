@@ -21,6 +21,9 @@
         <div class="theSlide-Collapsed_Toggle">
           <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
         </div>
+        <!-- <div class="theSlide-Collapsed_Logo">
+          <h3 class="logo">b</h3>
+        </div>-->
       </div>
     </transition>
 
@@ -28,8 +31,8 @@
     <transition name="menuFade">
       <div v-if="menu && !slider" class="theSlide-Menu theSlide-Open" @mouseleave="menu = false">
         <ul>
-          <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}">
-            <a>All Projects</a>
+          <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}" class="nobreak">
+            <a class="nobreak">All Projects</a>
           </nuxt-link>
           <li
             v-for="category in categories"
@@ -42,6 +45,9 @@
             <a>About</a>
           </nuxt-link>
           <li></li>
+          <!-- <li>
+            <p>bram kleiweg</p>
+          </li>-->
         </ul>
       </div>
     </transition>
@@ -53,7 +59,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
-      menu: false
+      menu: true
     }
   },
   computed: mapState({

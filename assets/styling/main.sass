@@ -48,10 +48,11 @@ body, html
       justify-content: flex-start
       height: 100%
       li
-        padding-right: var(--menu-collapsed)
+        padding-right: var(--spacing-three)
         padding-left: var(--spacing-three)
         border-bottom: 1px solid transparent
-        text-transform: capitalize
+        a
+          text-transform: capitalize
       li:first-child
         padding-top: var(--spacing-three)
       li:nth-child(2), li:nth-child(3)
@@ -70,12 +71,18 @@ body, html
   &-Collapsed
     display: flex
     flex-direction: column
-    justify-content: flex-start
+    justify-content: space-between
     width: var(--menu-collapsed)
     &_Toggle
       padding-top: var(--spacing-three)
       padding-bottom: var(--spacing-three)
       text-align: center
+    &_Logo
+      padding-top: var(--spacing-three)
+      padding-bottom: var(--spacing-three)
+      text-align: center
+      h3
+        font-size: 38px
 
 @media all and (min-width: $breakpoint)
   .view-General
@@ -241,11 +248,11 @@ header
     transform: translate(.55em, .55em)
 h1.logo:before
   font-size: 1vw
-h3.logo:before
-  font-size: calc(#{$font-base} / 2)
 .theSlide
   h1.logo:before
     font-size: 2vw
+  h3.logo:before
+    font-size: calc(#{$font-base} / 2)
 
 // // Mobile // //
 
