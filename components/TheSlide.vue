@@ -59,7 +59,7 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
-      menu: true
+      menu: false
     }
   },
   computed: mapState({
