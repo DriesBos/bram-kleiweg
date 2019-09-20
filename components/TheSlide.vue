@@ -12,16 +12,7 @@
 
     <!-- Collapsed -->
     <transition name="menuFade">
-      <div
-        v-if="!slider && !menu"
-        @mouseover="menu = true"
-        @click="menu = true"
-        class="theSlide-Menu theSlide-Collapsed"
-      >
-        <div class="theSlide-Collapsed_Toggle">
-          <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
-        </div>
-      </div>
+      <div @mouseover="menu = true" @click="menu = true" class="theSlide-Menu theSlide-Collapsed"></div>
     </transition>
 
     <!-- Menu -->
@@ -44,6 +35,11 @@
         </ul>
       </div>
     </transition>
+
+    <!-- Toggle -->
+    <div class="theSlide-Toggle" @click="menu = !menu">
+      <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
+    </div>
   </section>
 </template>
 

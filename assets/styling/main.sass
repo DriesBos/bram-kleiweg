@@ -38,7 +38,6 @@ body, html
     transform: translateX(calc(-100vw + #{var(--menu-open)}))
     transition: transform .3s ease
     will-change: transform
-    cursor: pointer
     text-decoration: none !important
     &:before
       font-size: 4vmin
@@ -52,8 +51,18 @@ body, html
     top: 0
     right: 0
     bottom: 0
+  &-Toggle
+    position: absolute
+    top: 0
+    right: 0
+    width: var(--menu-collapsed)
+    padding-top: var(--spacing-three)
+    padding-bottom: var(--spacing-three)
+    text-align: center
+    cursor: pointer
   &-Open
     width: var(--menu-open)
+    max-width: 100%
     ul
       display: flex
       flex-direction: column
@@ -79,10 +88,6 @@ body, html
     flex-direction: column
     justify-content: space-between
     width: var(--menu-collapsed)
-    &_Toggle
-      padding-top: var(--spacing-three)
-      padding-bottom: var(--spacing-three)
-      text-align: center
     &_Logo
       padding-top: var(--spacing-three)
       padding-bottom: var(--spacing-three)
