@@ -15,20 +15,25 @@ body, html
   display: flex
   justify-content: center
   align-items: center
-  transition: transform .5s ease // TODO: to transition page
-  background: black
+  background: white
   border-right: 2px solid black
   z-index: 999
   transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
-  transition: transform .3s ease, background .3s ease
+  transition: transform .5s ease, background .3s ease
+  will-change: transform, background
   &.slider
+    background: black
     transform: translateX(0px)
+    transition: transform .5s ease, background .3s ease
+    will-change: transform, background
     &.peek
-      transform: translateX(calc(0px - (#{var(--spacing-three)} * 3)))
-      transition: transform .3s ease, background .3s ease
       background: white
+      transition: transform .5s ease, background .3s ease, color .3s ease
+      will-change: transform, background, color
       .logo
         color: black
+        transition: color .3s ease
+        will-change: color
   &.menu
     transform: translateX(calc(-100vw + #{var(--menu-open)}))
     transition: transform .3s ease
@@ -41,6 +46,7 @@ body, html
     color: white
     cursor: pointer
     transition: color $transition-links
+    will-change: color
   &-Menu
     position: absolute
     top: 0
@@ -126,6 +132,7 @@ body, html
     .post-Item:first-child
       padding-left: calc(#{var(--spacing-four)} + #{var(--menu-collapsed)})
       transition: padding-left .35s ease
+      will-change: padding-left
       &.slider
         padding-left: var(--spacing-three)
     .post-Item:last-child
@@ -166,6 +173,7 @@ body, html
     .post-Item:first-child
       margin-left: var(--menu-collapsed)
       transition: margin-left .35s ease
+      will-change: margin-left
       &.slider
         margin-left: 0
     .post-Navigation
@@ -217,6 +225,7 @@ header
     p, a
       border-bottom: 1px transparent solid
       transition: border-bottom $transition-links
+      will-change: border-bottom
     li:first-child
       cursor: default
       padding-left: var(--spacing-three)
@@ -280,6 +289,7 @@ h1.logo:before
       padding-top: var(--spacing-four)
       padding-bottom: var(--spacing-four)
       transition: padding-left .35s ease
+      will-change: padding-left
       padding-left: calc(#{var(--spacing-three)} + #{var(--menu-collapsed)})
       &.slider
         padding-left: var(--spacing-three)
