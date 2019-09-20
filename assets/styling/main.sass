@@ -20,11 +20,12 @@ body, html
   border-right: 2px solid black
   z-index: 999
   transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
+  transition: transform .3s ease, background .3s ease
   &.slider
     transform: translateX(0px)
     &.peek
       transform: translateX(calc(0px - (#{var(--spacing-three)} * 3)))
-      transition: transform .3s ease, background .5s ease
+      transition: transform .3s ease, background .3s ease
       background: white
       .logo
         color: black
