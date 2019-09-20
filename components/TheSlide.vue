@@ -21,9 +21,6 @@
         <div class="theSlide-Collapsed_Toggle">
           <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
         </div>
-        <!-- <div class="theSlide-Collapsed_Logo">
-          <h3 class="logo">b</h3>
-        </div>-->
       </div>
     </transition>
 
@@ -44,10 +41,6 @@
           <nuxt-link tag="li" to="/about">
             <a>About</a>
           </nuxt-link>
-          <li></li>
-          <!-- <li>
-            <p>bram kleiweg</p>
-          </li>-->
         </ul>
       </div>
     </transition>
