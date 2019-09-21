@@ -37,7 +37,7 @@
     </transition>
 
     <!-- Toggle -->
-    <div class="theSlide-Toggle" @click="menu = !menu">
+    <div v-if="!slider" class="theSlide-Toggle" @click="menu = !menu">
       <img class="icon icon-Close" src="@/assets/images/hamburger.svg" />
     </div>
   </section>
