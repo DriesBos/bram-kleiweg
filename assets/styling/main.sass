@@ -132,8 +132,8 @@ body, html
     .post-Item:first-child
       padding-left: calc(#{var(--spacing-four)} + #{var(--menu-collapsed)})
     .post-Item:last-child
-      padding-right: var(--spacing-four)
-    @for $i from 0 to 999
+      padding-right: var(--spacing-five)
+    @for $i from 0 to 999 // Randomize item size
       .post-Item:nth-child(#{$i})
         margin-right: (random(100) + 80)+px
         height: random(22) + 78%
