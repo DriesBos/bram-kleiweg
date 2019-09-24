@@ -1,13 +1,8 @@
 <template>
   <section class="theSlide" :class="[{slider: slider}, {peek: peek}, {menu: menu}]">
     <!-- Landing text -->
-    <div
-      v-if="slider"
-      @click="toggleSliderStore"
-      @mouseover="toTruePeekStore"
-      @mouseleave="toFalsePeekStore"
-    >
-      <h1 class="logo">bram kleiweg</h1>
+    <div v-if="slider" @click="toggleSliderStore">
+      <h1 @mouseover="peek = true" @mouseleave="peek = false" class="logo">bram kleiweg</h1>
     </div>
 
     <!-- Collapsed -->
@@ -48,7 +43,8 @@ import { mapState, mapMutations } from 'vuex'
 export default {
   data: function() {
     return {
-      menu: false
+      menu: false,
+      peek: false
     }
   },
   computed: mapState({
@@ -56,13 +52,10 @@ export default {
     selectedCategory(state) {
       return this.$route.params.categoryId
     },
-    slider: state => state.slider.slider,
-    peek: state => state.slider.peek
+    slider: state => state.slider.slider
   }),
   methods: mapMutations({
-    toggleSliderStore: 'slider/toggleSlider',
-    toTruePeekStore: 'slider/peekToTrue',
-    toFalsePeekStore: 'slider/peekToFalse'
+    toggleSliderStore: 'slider/toggleSlider'
   })
 }
 </script>
