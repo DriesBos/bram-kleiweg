@@ -1,5 +1,5 @@
 <template>
-  <ul class="view-Horizontal view-Blog post-List">
+  <ul id="scroll" class="view-Horizontal view-Blog post-List">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import PostPreview from '~/components/PostPreview.vue'
 import { mapState } from 'vuex'
 
@@ -19,6 +20,15 @@ export default {
   components: {
     PostPreview: PostPreview
   },
+  mounted() {
+    $('#scroll').on('mousewheel', function(e) {
+      e.preventDefault()
+      const delta = 40 * (parseInt(e.originalEvent.deltaY) / 33)
+      const scto = $(this).scrollLeft() + delta
+      $(this).scrollLeft(scto)
+    })
+  },
+  methods: {},
   computed: mapState({
     projects: state => state.projects.list,
     categories: state => state.categories.list,

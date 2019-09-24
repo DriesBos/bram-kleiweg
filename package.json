@@ -17,6 +17,7 @@
     "@nuxt/webpack": "^2.8.1",
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
+    "jquery": "^3.4.1",
     "marked": "^0.7.0",
     "nuxt": "^2.8.1",
     "storyblok-nuxt": "^1.0.1"
