@@ -19,7 +19,7 @@ body, html
   border-right: 2px solid black
   z-index: 999
   transform: translateX(calc(-100vw + #{var(--menu-collapsed)}))
-  transition: transform .5s ease, background .3s ease
+  transition: transform .5s ease
   will-change: transform, background
   &.slider
     background: black
@@ -131,10 +131,6 @@ body, html
         max-height: 100%
     .post-Item:first-child
       padding-left: calc(#{var(--spacing-four)} + #{var(--menu-collapsed)})
-      transition: padding-left .35s ease
-      will-change: padding-left
-      &.slider
-        padding-left: var(--spacing-three)
     .post-Item:last-child
       padding-right: var(--spacing-four)
     @for $i from 0 to 999
@@ -172,10 +168,6 @@ body, html
         margin-bottom: 0
     .post-Item:first-child
       margin-left: var(--menu-collapsed)
-      transition: margin-left .35s ease
-      will-change: margin-left
-      &.slider
-        margin-left: 0
     .post-Navigation
       position: fixed
       padding: var(--spacing-three)
