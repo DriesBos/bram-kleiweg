@@ -16,8 +16,28 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Meta description'
-      }
+        content: 'Graphic Design'
+      },
+      {
+        name: 'og:title',
+        content: 'Bram Kleiweg'
+      },
+      {
+        name: 'og:description',
+        content: 'Graphic Design'
+      },
+      {
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        name: 'og:url',
+        content: 'https://www.bramkleiweg.com/'
+      },
+      {
+        name: 'og:image',
+        content: './assets/images/bram-kleiweg-image.jpg'
+      },
     ],
     link: [{
       rel: 'icon',
