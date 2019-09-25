@@ -14,7 +14,12 @@
     <transition name="menuFade">
       <div v-if="menu && !slider" class="theSlide-Menu theSlide-Open" @mouseleave="menu = false">
         <ul>
-          <nuxt-link tag="li" to="/" v-bind:class="{active: !selectedCategory}" class="nobreak">
+          <nuxt-link
+            tag="li"
+            to="/"
+            v-bind:class="{active: !selectedCategory && this.$route.name != 'about'}"
+            class="nobreak"
+          >
             <a class="nobreak">All Projects</a>
           </nuxt-link>
           <li
@@ -24,7 +29,7 @@
           >
             <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
           </li>
-          <nuxt-link tag="li" to="/about">
+          <nuxt-link tag="li" to="/about" v-bind:class="{active: this.$route.name == 'about'}">
             <a>About</a>
           </nuxt-link>
         </ul>
