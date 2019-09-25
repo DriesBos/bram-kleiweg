@@ -1,5 +1,5 @@
 <template>
-  <ul d="scroll" class="view-Horizontal view-Blog post-List">
+  <ul id="scroll" class="view-Horizontal view-Blog post-List">
     <PostPreview
       v-for="post in projects"
       :id="post.id"
@@ -29,10 +29,13 @@ export default {
     })
   },
   computed: mapState({
-    projects: state => state.projects.list,
-    categories: state => state.categories.list,
-    selectedCategory(state) {
-      return this.$route.params.categoryId
+    projects(state) {
+      const category = state.categories.list.find(
+        category => category.id === this.$route.params.categoryId
+      )
+      return state.projects.list.filter(
+        project => project.tag_list.indexOf(category.name) > -1
+      )
     },
     slider: state => state.slider.slider
   })

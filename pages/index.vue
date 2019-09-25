@@ -28,7 +28,6 @@ export default {
       $(this).scrollLeft(scto)
     })
   },
-  methods: {},
   computed: mapState({
     projects: state => state.projects.list,
     categories: state => state.categories.list,
