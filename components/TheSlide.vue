@@ -33,8 +33,8 @@
 
     <!-- Toggle -->
     <div v-if="!slider" class="theSlide-Toggle" @click="menu = !menu">
-      <img v-if="!menu" class="icon icon-Close" src="@/assets/images/hamburger.svg" />
-      <img v-else class="icon icon-Close" src="@/assets/images/close.svg" />
+      <img v-if="!menu" class="icon" src="@/assets/images/hamburger.svg" />
+      <img v-else class="icon" src="@/assets/images/close.svg" />
     </div>
   </section>
 </template>

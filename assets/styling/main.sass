@@ -170,8 +170,9 @@ body, html
       margin-left: var(--menu-collapsed)
     .post-Navigation
       position: fixed
-      padding: var(--spacing-three)
       cursor: pointer
+      line-height: 1
+      padding: var(--spacing-three)
       &_Left
         top: 50%
         transform: translateY(-50%)
@@ -307,6 +308,9 @@ h1.logo:before
         padding: var(--spacing-three)
         padding-left: calc(#{var(--spacing-three)} / 2
         padding-right: calc(#{var(--spacing-three)} / 2
+        line-height: 1
+      a:first-child
+        padding-left: var(--spacing-three)
       a:last-child
         padding-right: var(--spacing-three)
 
