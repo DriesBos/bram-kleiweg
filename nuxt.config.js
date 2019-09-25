@@ -6,8 +6,7 @@ module.exports = {
 
   head: {
     title: 'Bram Kleiweg',
-    meta: [
-      {
+    meta: [{
         charset: 'utf-8'
       },
       {
@@ -20,26 +19,17 @@ module.exports = {
         content: 'Meta description'
       }
     ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
-      }
-    ]
+    link: [{
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico'
+    }]
   },
 
   loading: {
     color: '#000',
     heright: '2px',
     throttle: '200'
-  },
-
-  scrollBehavior(to, from, savedPosition) {
-    return {
-      x: 0,
-      y: 0
-    }
   },
 
   css: [
@@ -57,21 +47,20 @@ module.exports = {
     [
       'storyblok-nuxt',
       {
-        accessToken:
-          process.env.NODE_ENV === 'production' // Generate new token
-            ? 'IFkYnGTmkvPNorcAV0vEbwtt'
-            : 'a4koUFuhCdl89KPtRjGfewtt',
+        accessToken: process.env.NODE_ENV === 'production' // Generate new token
+          ?
+          'IFkYnGTmkvPNorcAV0vEbwtt' : 'a4koUFuhCdl89KPtRjGfewtt',
         cacheProvider: 'memory'
       }
     ]
   ],
 
   generate: {
-    routes: function() {
+    routes: function () {
       return axios
         .get(
           'https://api.storyblok.com/v1/cdn/stories?version=published&token=LQu2PyUnQQnXdQrLxQ460Att&starts_with=blog&cv=' +
-            Math.floor(Date.now() / 1e3)
+          Math.floor(Date.now() / 1e3)
         )
         .then(res => {
           const blogPosts = res.data.stories.map(bp => bp.full_slug)
