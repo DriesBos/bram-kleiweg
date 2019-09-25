@@ -193,7 +193,6 @@ body, html
 header
   position: relative
   width: 100%
-  // z-index: 999
   display: none
   ul
     display: flex
@@ -280,11 +279,7 @@ h1.logo:before
       height: auto
       padding-top: var(--spacing-four)
       padding-bottom: var(--spacing-four)
-      transition: padding-left .35s ease
-      will-change: padding-left
       padding-left: calc(#{var(--spacing-three)} + #{var(--menu-collapsed)})
-      &.slider
-        padding-left: var(--spacing-three)
       > div, figcaption
         margin-bottom: var(--spacing-three)
       > div:last-child
