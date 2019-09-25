@@ -7,12 +7,12 @@
 
     <!-- Collapsed -->
     <transition name="menuFade">
-      <div @mouseover="menu = true" @click="menu = true" class="theSlide-Menu theSlide-Collapsed"></div>
+      <div class="theSlide-Menu theSlide-Collapsed"></div>
     </transition>
 
     <!-- Menu -->
     <transition name="menuFade">
-      <div v-if="menu && !slider" class="theSlide-Menu theSlide-Open" @mouseleave="menu = false">
+      <div v-if="menu && !slider" class="theSlide-Menu theSlide-Open">
         <ul>
           <nuxt-link
             tag="li"
