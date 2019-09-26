@@ -1,8 +1,8 @@
-import {
-  publicKey,
-  previewKey,
-  token
-} from './config';
+// import {
+//   publicKey,
+//   previewKey,
+//   token
+// } from './config.js';
 const axios = require('axios')
 const pkg = require('./package')
 
