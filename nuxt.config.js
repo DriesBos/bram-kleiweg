@@ -1,10 +1,8 @@
-// import {
-//   publicKey,
-//   previewKey,
-//   token
-// } from './config.js';
 const axios = require('axios')
 const pkg = require('./package')
+const publicKey = process.env.publicKey
+const previewKey = process.env.previewKey
+const token = process.env.token
 
 module.exports = {
   mode: 'universal',
