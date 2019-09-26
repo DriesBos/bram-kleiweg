@@ -1,3 +1,8 @@
+import {
+  publicKey,
+  previewKey,
+  token
+} from './config';
 const axios = require('axios')
 const pkg = require('./package')
 
@@ -69,7 +74,7 @@ module.exports = {
       {
         accessToken: process.env.NODE_ENV === 'production' // Generate new token
           ?
-          'IFkYnGTmkvPNorcAV0vEbwtt' : 'a4koUFuhCdl89KPtRjGfewtt',
+          `${publicKey}` : `${previewKey}`,
         cacheProvider: 'memory'
       }
     ]
@@ -79,7 +84,7 @@ module.exports = {
     routes: function () {
       return axios
         .get(
-          'https://api.storyblok.com/v1/cdn/stories?version=published&token=LQu2PyUnQQnXdQrLxQ460Att&starts_with=blog&cv=' +
+          `https://api.storyblok.com/v1/cdn/stories?version=published&token=${token}&starts_with=blog&cv=` +
           Math.floor(Date.now() / 1e3)
         )
         .then(res => {
