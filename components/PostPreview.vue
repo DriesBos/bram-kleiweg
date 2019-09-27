@@ -1,7 +1,13 @@
 <template>
-  <nuxt-link :to="'/blog/' + id" tag="li" class="post-Item" :class="{slider: slider}">
+  <nuxt-link
+    :to="'/blog/' + id"
+    tag="li"
+    class="post-Item lazy"
+    :class="{slider: slider}"
+    v-lazy-container="{ selector: 'img' }"
+  >
     <figcaption v-if="title" class="post-Info">{{ title }}</figcaption>
-    <img v-if="thumbnail" class="post-Thumbnail" :src="thumbnail" />
+    <img v-if="thumbnail" class="post-Thumbnail" :data-src="thumbnail" />
   </nuxt-link>
 </template>
 

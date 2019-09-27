@@ -5,6 +5,13 @@
 body, html
   position: relative
 
+.lazy
+  img
+    opacity: 0
+    transition: opacity .2s ease-in-out 
+  img[lazy=loaded]
+    opacity: 1
+
 .theSlide
   position: fixed
   left: 0
@@ -310,4 +317,3 @@ h1.logo:before
         padding-left: var(--spacing-three)
       a:last-child
         padding-right: var(--spacing-three)
-
