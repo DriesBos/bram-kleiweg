@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import MarkdownItem from '~/components/MarkdownItem.vue'
 import { mapState } from 'vuex'
+import MarkdownItem from '~/components/MarkdownItem.vue'
 
 /* eslint-disable */
 

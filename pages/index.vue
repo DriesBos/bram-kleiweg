@@ -13,8 +13,8 @@
 
 <script>
 import $ from 'jquery'
-import PostPreview from '~/components/PostPreview.vue'
 import { mapState } from 'vuex'
+import PostPreview from '~/components/PostPreview.vue'
 
 export default {
   components: {
