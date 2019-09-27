@@ -22,6 +22,7 @@ import { mapState } from 'vuex'
 import MarkdownItem from '~/components/MarkdownItem.vue'
 
 export default {
+  scrollToTop: true,
   components: {
     MarkdownItem
   },
