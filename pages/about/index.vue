@@ -5,7 +5,7 @@
         <h1 class="logo">{{ title }}</h1>
       </div>
       <div v-if="thumbnail" class="post-Thumbnail lazy" v-lazy-container="{ selector: 'img' }">
-        <img :data-src="thumbnail" />
+        <img :src="thumbnail" />
       </div>
       <MarkdownItem v-if="content" :input="content" class="post-Content" />
     </li>

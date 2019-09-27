@@ -7,7 +7,7 @@
     v-lazy-container="{ selector: 'img' }"
   >
     <figcaption v-if="title" class="post-Info">{{ title }}</figcaption>
-    <img v-if="thumbnail" class="post-Thumbnail" :data-src="thumbnail" />
+    <img v-if="thumbnail" class="post-Thumbnail" :src="thumbnail" />
   </nuxt-link>
 </template>
 
