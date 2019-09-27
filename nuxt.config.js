@@ -68,7 +68,9 @@ module.exports = {
     '~/assets/styling/main.sass'
   ],
 
-  plugins: [],
+  plugins: [
+    '~plugins/filters.js'
+  ],
 
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
