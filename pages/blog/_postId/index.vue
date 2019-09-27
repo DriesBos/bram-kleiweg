@@ -58,7 +58,6 @@ function getProjectIndex(projects, id) {
 }
 
 export default {
-  scrollToTop: true,
   components: {
     MarkdownItem
   },

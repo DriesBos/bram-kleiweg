@@ -17,7 +17,6 @@ import { mapState } from 'vuex'
 import PostPreview from '~/components/PostPreview.vue'
 
 export default {
-  scrollToTop: true,
   components: {
     PostPreview: PostPreview
   },
