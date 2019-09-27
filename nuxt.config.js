@@ -68,6 +68,15 @@ module.exports = {
     '~/assets/styling/main.sass'
   ],
 
+  router: {
+    scrollBehaviour(to, from, savedPosition) {
+      return {
+        x: 0,
+        y: 0
+      }
+    },
+  },
+
   plugins: [
     '~plugins/filters.js'
   ],
