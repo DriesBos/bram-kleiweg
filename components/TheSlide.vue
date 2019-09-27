@@ -29,7 +29,12 @@
           >
             <router-link tag="a" :to="'/category/' + category.id">{{ category.name }}</router-link>
           </li>
-          <nuxt-link tag="li" to="/about" v-bind:class="{active: this.$route.name == 'about'}">
+          <nuxt-link
+            tag="li"
+            to="/about"
+            v-bind:class="{active: this.$route.name == 'about'}"
+            @click="menu = false"
+          >
             <a>About</a>
           </nuxt-link>
         </ul>
@@ -60,8 +65,15 @@ export default {
     },
     slider: state => state.slider.slider
   }),
-  methods: mapMutations({
-    toggleSliderStore: 'slider/toggleSlider'
-  })
+  methods: {
+    ...mapMutations({
+      toggleSliderStore: 'slider/toggleSlider'
+    })
+  },
+  watch: {
+    $route(to, from) {
+      this.menu = false
+    }
+  }
 }
 </script>
