@@ -41,10 +41,20 @@
       </div>
     </transition>
 
-    <!-- Toggle -->
+    <!-- Toggle Menu -->
     <div v-if="!slider" class="theSlide-Toggle" @click="menu = !menu">
       <img v-if="!menu" class="icon" src="@/assets/images/hamburger.svg" />
       <img v-else class="icon" src="@/assets/images/close.svg" />
+    </div>
+
+    <!-- Toggle Logo -->
+    <div v-if="!slider" class="theSlide-Logo">
+      <div v-if="!menu" class="short">
+        <h3 class="logo">b</h3>
+      </div>
+      <div v-else class="long">
+        <h3 class="logo">bram kleiweg</h3>
+      </div>
     </div>
   </section>
 </template>
@@ -66,6 +76,11 @@ export default {
     slider: state => state.slider.slider
   }),
   methods: {
+    // clickMenuLogo = function() {
+    //   menu = false,
+    //   peek = false,
+    //   this.toggleSliderStore
+    // },
     ...mapMutations({
       toggleSliderStore: 'slider/toggleSlider'
     })

@@ -33,6 +33,11 @@ body, html
     transform: translateX(0px)
     transition: transform .5s ease, background .3s ease
     will-change: transform, background
+    .logo
+      color: white
+      cursor: pointer
+      transition: color $transition-links
+      will-change: color
     &.peek
       background: white
       transition: background .3s ease, color .3s ease
@@ -48,11 +53,6 @@ body, html
     text-decoration: none !important
     &:before
       font-size: 4vmin
-  .logo
-    color: white
-    cursor: pointer
-    transition: color $transition-links
-    will-change: color
   &-Menu
     position: absolute
     top: 0
@@ -67,6 +67,25 @@ body, html
     padding-bottom: var(--spacing-three)
     text-align: center
     cursor: pointer
+  &-Logo
+    position: absolute
+    bottom: 0
+    right: 0
+    cursor: pointer  
+    > div
+      padding: var(--spacing-three)
+      padding-right: 20px
+    h3
+      display: inline
+      &:before
+        transform: translate(.55em, -.55em)
+        font-size: .5em
+    .long
+      text-align: left
+      width: var(--menu-open)
+    .short
+      text-align: center
+      width: var(--menu-collapsed)
   &-Open
     width: var(--menu-open)
     max-width: 100%
@@ -254,16 +273,9 @@ header
     content: '1'
     top: 0
     right: 0
-    font-size: 1vw
-    line-height: 1
+    font-size: .25em
     transform: translate(.55em, .55em)
-h1.logo:before
-  font-size: 1vw
-.theSlide
-  h1.logo:before
-    font-size: 2vw
-  h3.logo:before
-    font-size: calc(#{$font-base} / 2)
+    line-height: 1
 
 // // Mobile // //
 
