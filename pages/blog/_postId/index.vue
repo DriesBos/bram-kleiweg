@@ -14,11 +14,6 @@
         <img v-if="image_2" :src="image_2" />
         <img v-if="image_3" :src="image_3" />
         <img v-if="image_4" :src="image_4" />
-        <img v-if="image_5" :src="image_5" />
-        <img v-if="image_6" :src="image_6" />
-        <img v-if="image_7" :src="image_7" />
-        <img v-if="image_8" :src="image_8" />
-        <img v-if="image_9" :src="image_9" />
       </div>
     </li>
 
