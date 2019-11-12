@@ -22,7 +22,6 @@ export default {
   },
   mounted() {
     $('#scroll').on('mousewheel', function(e) {
-      console.log('test')
       e.preventDefault()
       const delta = 40 * (parseInt(e.originalEvent.deltaY) / 33)
       const scto = $(this).scrollLeft() + delta
