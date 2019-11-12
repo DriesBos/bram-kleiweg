@@ -35,4 +35,6 @@ export default {
     display: block
   p:last-child
     margin-bottom: 0
+  a
+    text-decoration: underline
 </style>
