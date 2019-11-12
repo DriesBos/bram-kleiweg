@@ -3,18 +3,15 @@ const pkg = require('./package')
 const publicKey = process.env.PUBLICKEY
 const previewKey = process.env.PREVIEWKEY
 const apiToken = process.env.APITOKEN
-// import {
-//   publicKey,
-//   previewKey,
-//   apiToken
-// } from './config';
+// import { publicKey, previewKey, apiToken } from './config'
 
 module.exports = {
   mode: 'universal',
 
   head: {
     title: 'Bram Kleiweg',
-    meta: [{
+    meta: [
+      {
         charset: 'utf-8'
       },
       {
@@ -45,13 +42,15 @@ module.exports = {
       {
         name: 'og:image',
         content: './assets/images/bram-kleiweg-image.jpg'
-      },
+      }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
 
   loading: {
@@ -74,32 +73,31 @@ module.exports = {
         x: 0,
         y: 0
       }
-    },
+    }
   },
 
-  plugins: [
-    '~plugins/filters.js'
-  ],
+  plugins: ['~plugins/filters.js'],
 
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     [
       'storyblok-nuxt',
       {
-        accessToken: process.env.NODE_ENV === 'production' // Generate new token
-          ?
-          `${publicKey}` : `${previewKey}`,
+        accessToken:
+          process.env.NODE_ENV === 'production' // Generate new token
+            ? `${publicKey}`
+            : `${previewKey}`,
         cacheProvider: 'memory'
       }
     ]
   ],
 
   generate: {
-    routes: function () {
+    routes: function() {
       return axios
         .get(
           `https://api.storyblok.com/v1/cdn/stories?version=published&token=${apiToken}&starts_with=blog&cv=` +
-          Math.floor(Date.now() / 1e3)
+            Math.floor(Date.now() / 1e3)
         )
         .then(res => {
           const blogPosts = res.data.stories.map(bp => bp.full_slug)
@@ -121,7 +119,7 @@ module.exports = {
      */
     extend(config, ctx) {
       // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
+      if (ctx.isDev && ctx.isClient && 1 === 2) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
