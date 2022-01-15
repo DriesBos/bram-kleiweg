@@ -18,7 +18,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
     "jquery": "^3.4.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "nuxt": "^2.9.0",
     "redirect-ssl": "^1.4.1",
     "storyblok-nuxt": "^1.0.1",
